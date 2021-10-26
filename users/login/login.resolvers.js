@@ -10,7 +10,7 @@ export default {
       if (!user) {
         return {
           ok: false,
-          error: "User not found.",
+          error: "존재하지 않는 회원 아이디 입니다.",
         };
       }
       // 2. 비밀번호가 맞는지 체크
@@ -18,7 +18,7 @@ export default {
       if (!passwordOk) {
         return {
           ok: false,
-          error: "Incorrect password",
+          error: "비밀번호를 확인해 주세요.",
         };
       }
       const token = await jwt.sign({ id: user.id }, process.env.SECRET_KEY);
