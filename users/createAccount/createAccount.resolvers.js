@@ -8,7 +8,14 @@ export default {
       { userId, userType, userName, password, sex, phone }
     ) => {
       try {
-        const existingUserId = await client.user.findFirst({
+        var writeIP = ""; // IP 주소
+        require("dns").lookup(
+          require("os").hostname(),
+          function (err, add, fam) {
+            writeIP = add;
+          }
+        );
+        const existingUserId = await client.user.findUnique({
           where: {
             userId,
           },
@@ -16,7 +23,7 @@ export default {
         if (existingUserId) {
           throw new Error("동일한 회원아이디가 존재합니다.");
         }
-        const existingUserPhone = await client.user.findFirst({
+        const existingUserPhone = await client.user.findUnique({
           where: {
             phone,
           },
@@ -33,6 +40,7 @@ export default {
             password: uglyPassword,
             sex,
             phone,
+            writeIP,
           },
         });
         return {
