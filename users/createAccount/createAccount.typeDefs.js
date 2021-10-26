@@ -3,14 +3,12 @@ import { gql } from "apollo-server";
 export default gql`
   type Mutation {
     createAccount(
+      userId: String!
       userType: String!
-      userId: String
       userName: String!
       password: String!
-      email: String!
       sex: String!
-      age: Int!
-      profile: String
+      phone: String!
     ): MutationResponse!
   }
 `;

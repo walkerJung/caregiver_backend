@@ -5,35 +5,34 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      { userType, userId, userName, password, email, sex, age, profile }
+      { userId, userType, userName, password, sex, phone }
     ) => {
       try {
-        const existingUser = await client.user.findFirst({
+        const existingUserId = await client.user.findUnique({
           where: {
-            OR: [
-              {
-                userId,
-              },
-              {
-                email,
-              },
-            ],
+            userId,
           },
         });
-        if (existingUser) {
-          throw new Error("This username/password is already taken.");
+        if (existingUserId) {
+          throw new Error("동일한 회원아이디가 존재합니다.");
+        }
+        const existingUserPhone = await client.user.findUnique({
+          where: {
+            phone,
+          },
+        });
+        if (existingUserPhone) {
+          throw new Error("동일한 회원연락처가 존재합니다.");
         }
         const uglyPassword = await bcrypt.hash(password, 10);
         await client.user.create({
           data: {
-            userType,
             userId,
+            userType,
             userName,
             password: uglyPassword,
-            email,
             sex,
-            age,
-            profile,
+            phone,
           },
         });
         return {
@@ -42,7 +41,7 @@ export default {
       } catch (e) {
         return {
           ok: false,
-          error: "Cant create account.",
+          error: "회원가입에 실패하였습니다. 관리자에게 문의해주세요.",
         };
       }
     },
