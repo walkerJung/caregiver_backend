@@ -6,11 +6,8 @@ export default {
       _,
       {
         userCode,
-        address,
-        addressDetail,
         residentNumber,
         idCard,
-        bankInfo,
         smoke,
         drink,
         mealCare,
@@ -18,6 +15,9 @@ export default {
         suctionCare,
         moveCare,
         bedCare,
+        address,
+        addressDetail,
+        bankInfo,
       }
     ) => {
       try {
@@ -39,11 +39,8 @@ export default {
         await client.caregiverInfo.create({
           data: {
             userCode,
-            address,
-            addressDetail,
             residentNumber,
             idCard,
-            bankInfo,
             smoke,
             drink,
             mealCare,
@@ -51,6 +48,10 @@ export default {
             suctionCare,
             moveCare,
             bedCare,
+            address,
+            addressDetail,
+            bankInfo,
+            writeIP,
           },
         });
         return {
