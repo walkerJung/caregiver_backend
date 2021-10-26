@@ -26,7 +26,7 @@ export default {
             id: userCode,
           },
         });
-        if (existUser) {
+        if (!existUser) {
           throw new Error("잘못된 접근입니다.");
         }
         var writeIP = ""; // IP 주소
