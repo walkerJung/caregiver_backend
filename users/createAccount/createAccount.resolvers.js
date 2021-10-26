@@ -8,7 +8,7 @@ export default {
       { userId, userType, userName, password, sex, phone }
     ) => {
       try {
-        const existingUserId = await client.user.findUnique({
+        const existingUserId = await client.user.findFirst({
           where: {
             userId,
           },
@@ -16,7 +16,7 @@ export default {
         if (existingUserId) {
           throw new Error("동일한 회원아이디가 존재합니다.");
         }
-        const existingUserPhone = await client.user.findUnique({
+        const existingUserPhone = await client.user.findFirst({
           where: {
             phone,
           },
