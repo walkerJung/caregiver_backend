@@ -11,16 +11,93 @@ generator client {
 }
 
 model User {
+  id            Int             @id @default(autoincrement())
+  userId        String          @unique
+  userType      String
+  userName      String
+  password      String
+  sex           String
+  phone         String          @unique
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  writeIP       String
+  CaregiverInfo CaregiverInfo[]
+  Announcement  Announcement[]
+}
+
+model CaregiverInfo {
+  id             Int      @id @default(autoincrement())
+  user           User     @relation(fields: [userCode], references: [id])
+  userCode       Int
+  adress         String
+  adressDetail   String
+  residentNumber String
+  idCard         String
+  bankName       String
+  bankAccount    String
+  smoke          String
+  drink          String
+  mealCare       String
+  urineCare      String
+  suctionCare    String
+  moveCare       String
+  bedCare        String
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  writeIP        String
+}
+
+model Announcement {
+  id                          Int                     @id @default(autoincrement())
+  status                      String
+  user                        User                    @relation(fields: [userCode], references: [id])
+  userCode                    Int
+  announcementApplication     AnnouncementApplication @relation(fields: [announcementApplicationCode], references: [id])
+  announcementApplicationCode Int
+  confirmCaregiverId          Int?
+  needMealCare                String
+  needUrineCare               String
+  needSuctionCare             String
+  needMoveCare                String
+  needBedCare                 String
+  needHygieneCare             String
+  caregiverMeal               String
+  infectiousDisease           String
+  expectedCost                String
+  hopeCost                    String
+  title                       String
+  startDate                   DateTime
+  endDate                     DateTime
+  protectorName               String
+  protectorPhone              String
+  patientName                 String
+  patientAge                  Int
+  patientWeight               Int
+  address                     String
+  addressDetail               String
+  nursingGrade                String
+  createAt                    DateTime                @default(now())
+  updatedAt                   DateTime                @updatedAt
+  writeIP                     String
+}
+
+model AnnouncementApplication {
+  id            Int            @id @default(autoincrement())
+  Announcement  Announcement[]
+  userId        String
+  caregiverCost String
+  confirm       Boolean
+  createAt      DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  writeIP       String
+}
+
+model Notice {
   id        Int      @id @default(autoincrement())
-  userType  String
-  userId    String   @unique
-  userName  String
-  password  String
-  email     String   @unique
-  sex       String
-  age       Int
-  profile   String?
-  avatar    String?
-  createdAt DateTime @default(now())
+  title     String
+  content   String
+  createAt  DateTime @default(now())
   updatedAt DateTime @updatedAt
+  writeIP   String
+
 }
