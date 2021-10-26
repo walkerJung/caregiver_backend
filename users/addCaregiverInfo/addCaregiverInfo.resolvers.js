@@ -33,6 +33,7 @@ export default {
         require("dns").lookup(
           require("os").hostname(),
           function (err, add, fam) {
+            console.log(add);
             writeIP = add;
           }
         );
