@@ -29,12 +29,11 @@ model CaregiverInfo {
   id             Int      @id @default(autoincrement())
   user           User     @relation(fields: [userCode], references: [id])
   userCode       Int
-  adress         String
-  adressDetail   String
+  address        String
+  addressDetail  String
   residentNumber String
   idCard         String
-  bankName       String
-  bankAccount    String
+  bankInfo       String
   smoke          String
   drink          String
   mealCare       String
