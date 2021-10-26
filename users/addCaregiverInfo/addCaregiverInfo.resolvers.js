@@ -21,14 +21,6 @@ export default {
       }
     ) => {
       try {
-        const existUser = await client.user.findUnique({
-          where: {
-            id: userCode,
-          },
-        });
-        if (!existUser) {
-          throw new Error("잘못된 접근입니다.");
-        }
         var writeIP = ""; // IP 주소
         require("dns").lookup(
           require("os").hostname(),
@@ -37,6 +29,14 @@ export default {
             writeIP = add;
           }
         );
+        const existUser = await client.user.findUnique({
+          where: {
+            id: userCode,
+          },
+        });
+        if (!existUser) {
+          throw new Error("잘못된 접근입니다.");
+        }
         await client.caregiverInfo.create({
           data: {
             userCode,
