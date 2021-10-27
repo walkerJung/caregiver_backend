@@ -48,7 +48,7 @@ model CaregiverInfo {
 
 model Announcement {
   id                      Int                       @id @default(autoincrement())
-  status                  String
+  status                  Int
   user                    User                      @relation(fields: [userCode], references: [id])
   userCode                Int
   announcementApplication AnnouncementApplication[]
