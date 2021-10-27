@@ -47,48 +47,48 @@ model CaregiverInfo {
 }
 
 model Announcement {
-  id                          Int                     @id @default(autoincrement())
-  status                      String
-  user                        User                    @relation(fields: [userCode], references: [id])
-  userCode                    Int
-  announcementApplication     AnnouncementApplication @relation(fields: [announcementApplicationCode], references: [id])
-  announcementApplicationCode Int
-  confirmCaregiverId          Int?
-  needMealCare                String
-  needUrineCare               String
-  needSuctionCare             String
-  needMoveCare                String
-  needBedCare                 String
-  needHygieneCare             String
-  caregiverMeal               String
-  infectiousDisease           String
-  expectedCost                String?
-  hopeCost                    String?
-  title                       String
-  startDate                   DateTime
-  endDate                     DateTime
-  protectorName               String
-  protectorPhone              String
-  patientName                 String
-  patientAge                  Int
-  patientWeight               Int
-  address                     String
-  addressDetail               String
-  nursingGrade                String
-  createAt                    DateTime                @default(now())
-  updatedAt                   DateTime                @updatedAt
-  writeIP                     String
+  id                      Int                       @id @default(autoincrement())
+  status                  String
+  user                    User                      @relation(fields: [userCode], references: [id])
+  userCode                Int
+  announcementApplication AnnouncementApplication[]
+  confirmCaregiverId      Int?
+  needMealCare            String
+  needUrineCare           String
+  needSuctionCare         String
+  needMoveCare            String
+  needBedCare             String
+  needHygieneCare         String
+  caregiverMeal           String
+  infectiousDisease       String
+  expectedCost            String?
+  hopeCost                String?
+  title                   String
+  startDate               DateTime
+  endDate                 DateTime
+  protectorName           String
+  protectorPhone          String
+  patientName             String
+  patientAge              Int
+  patientWeight           Int
+  address                 String
+  addressDetail           String
+  nursingGrade            String
+  createAt                DateTime                  @default(now())
+  updatedAt               DateTime                  @updatedAt
+  writeIP                 String
 }
 
 model AnnouncementApplication {
-  id            Int            @id @default(autoincrement())
-  Announcement  Announcement[]
-  userId        String
-  caregiverCost String
-  confirm       Boolean
-  createAt      DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
-  writeIP       String
+  id               Int          @id @default(autoincrement())
+  announcement     Announcement @relation(fields: [announcementCode], references: [id])
+  announcementCode Int
+  userId           String
+  caregiverCost    String
+  confirm          Boolean
+  createAt         DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  writeIP          String
 }
 
 model Notice {
