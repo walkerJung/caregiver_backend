@@ -18,8 +18,8 @@ export default gql`
       expectedCost: String
       hopeCost: String
       title: String
-      startDate: DateTime
-      endDate: DateTime
+      startDate: String
+      endDate: String
       protectorName: String
       protectorPhone: String
       patientName: String
