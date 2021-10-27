@@ -41,9 +41,7 @@ export default {
         );
         const announcement = await client.announcement.findUnique({
           where: {
-            data: {
-              id: announcementCode,
-            },
+            id: announcementCode,
           },
         });
         console.log(announcement);
@@ -86,7 +84,7 @@ export default {
         console.log(e);
         return {
           ok: false,
-          error: "간병 공고등록에 실패하였습니다. 관리자에게 문의해주세요.",
+          error: "간병 공고수정에 실패하였습니다. 관리자에게 문의해주세요.",
         };
       }
     },
