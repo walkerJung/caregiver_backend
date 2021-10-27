@@ -52,6 +52,9 @@ export default {
             "예상간병비가 산출된 공고는 수정이 불가능합니다. 관리자에게 문의해주세요."
           );
         }
+        if (announcement.userCode != userCode) {
+          throw new Error("본인이 작성한 공고만 수정이 가능합니다.");
+        }
         await client.announcement.update({
           where: {
             id: announcementCode,
