@@ -2,9 +2,10 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    writeAnnouncement: async (
+    editAnnouncement: async (
       _,
       {
+        announcementCode,
         userCode,
         confirmCaregiverId,
         needMealCare,
@@ -38,15 +39,16 @@ export default {
             writeIP = add;
           }
         );
-        const existUser = await client.user.findUnique({
+        const announcement = await client.announcement.findUnique({
           where: {
-            id: userCode,
+            data: {
+              id: announcementCode,
+            },
           },
         });
-        if (!existUser) {
-          throw new Error(
-            "비회원은 글쓰기권한이 없습니다. 관리자에게 문의해주세요."
-          );
+        console.log(announcement);
+        if (!announcement) {
+          throw new Error("삭제된 공고입니다. 관리자에게 문의해주세요.");
         }
         await client.announcement.create({
           data: {
