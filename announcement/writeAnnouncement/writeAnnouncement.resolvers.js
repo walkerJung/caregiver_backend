@@ -68,6 +68,7 @@ export default {
             address,
             addressDetail,
             nursingGrade,
+            writeIP,
           },
         });
         return {
