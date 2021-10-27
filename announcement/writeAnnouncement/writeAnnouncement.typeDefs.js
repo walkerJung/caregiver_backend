@@ -3,7 +3,6 @@ import { gql } from "apollo-server";
 export default gql`
   type Mutation {
     writeAnnouncement(
-      status: String!
       userCode: Int!
       announcementApplicationCode: Int!
       confirmCaregiverId: Int

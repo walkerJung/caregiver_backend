@@ -5,7 +5,6 @@ export default {
     writeAnnouncement: async (
       _,
       {
-        status,
         userCode,
         announcementApplicationCode,
         confirmCaregiverId,
@@ -50,7 +49,7 @@ export default {
         }
         await client.announcement.create({
           data: {
-            status,
+            status: 1,
             userCode,
             announcementApplicationCode,
             confirmCaregiverId,
