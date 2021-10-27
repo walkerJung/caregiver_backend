@@ -13,8 +13,6 @@ export default gql`
       needHygieneCare: String!
       caregiverMeal: String!
       infectiousDisease: String!
-      expectedCost: String!
-      hopeCost: String!
       title: String!
       startDate: String!
       endDate: String!
