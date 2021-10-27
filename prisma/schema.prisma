@@ -62,8 +62,8 @@ model Announcement {
   needHygieneCare             String
   caregiverMeal               String
   infectiousDisease           String
-  expectedCost                String
-  hopeCost                    String
+  expectedCost                String?
+  hopeCost                    String?
   title                       String
   startDate                   DateTime
   endDate                     DateTime
