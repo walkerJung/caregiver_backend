@@ -6,7 +6,6 @@ export default {
       _,
       {
         userCode,
-        announcementApplicationCode,
         confirmCaregiverId,
         needMealCare,
         needUrineCare,
@@ -51,7 +50,6 @@ export default {
           data: {
             status: 1,
             userCode,
-            announcementApplicationCode,
             confirmCaregiverId,
             needMealCare,
             needUrineCare,

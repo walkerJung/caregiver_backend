@@ -4,7 +4,6 @@ export default gql`
   type Mutation {
     writeAnnouncement(
       userCode: Int!
-      announcementApplicationCode: Int!
       confirmCaregiverId: Int
       needMealCare: String!
       needUrineCare: String!
