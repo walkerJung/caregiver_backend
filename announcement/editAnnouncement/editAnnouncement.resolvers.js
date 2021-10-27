@@ -44,11 +44,18 @@ export default {
             id: announcementCode,
           },
         });
-        console.log(announcement);
         if (!announcement) {
           throw new Error("삭제된 공고입니다. 관리자에게 문의해주세요.");
         }
-        await client.announcement.create({
+        if (announcement.status > 1) {
+          throw new Error(
+            "예상간병비가 산출된 공고는 수정이 불가능합니다. 관리자에게 문의해주세요."
+          );
+        }
+        await client.announcement.update({
+          where: {
+            id: announcementCode,
+          },
           data: {
             status: 1,
             userCode,
