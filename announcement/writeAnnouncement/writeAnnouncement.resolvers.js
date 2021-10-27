@@ -26,6 +26,8 @@ export default {
         address,
         addressDetail,
         nursingGrade,
+        disease,
+        isolation,
       }
     ) => {
       try {
@@ -68,6 +70,8 @@ export default {
             address,
             addressDetail,
             nursingGrade,
+            disease,
+            isolation,
             writeIP,
           },
         });
