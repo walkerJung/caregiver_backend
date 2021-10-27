@@ -15,7 +15,7 @@ export default {
         if (!announcement) {
           throw new Error("이미 삭제된 공고입니다.");
         }
-        if (!announcement.userCode != userCode) {
+        if (announcement.userCode != userCode) {
           throw new Error("본인이 작성한 공고만 삭제 가능합니다.");
         }
         await client.announcement.delete({
