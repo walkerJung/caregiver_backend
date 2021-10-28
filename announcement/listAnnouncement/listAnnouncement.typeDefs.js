@@ -28,6 +28,6 @@ export default gql`
   }
 
   type Query {
-    ListAnnouncement: [Announcement]!
+    listAnnouncement: [Announcement]!
   }
 `;
