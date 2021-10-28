@@ -41,7 +41,7 @@ export default {
         );
         const announcement = await client.announcement.findUnique({
           where: {
-            id: announcementCode,
+            code: announcementCode,
           },
         });
         if (!announcement) {
@@ -57,7 +57,7 @@ export default {
         }
         await client.announcement.update({
           where: {
-            id: announcementCode,
+            code: announcementCode,
           },
           data: {
             status: 1,

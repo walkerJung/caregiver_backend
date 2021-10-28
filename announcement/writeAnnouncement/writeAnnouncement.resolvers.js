@@ -40,7 +40,7 @@ export default {
         );
         const existUser = await client.user.findUnique({
           where: {
-            id: userCode,
+            code: userCode,
           },
         });
         if (!existUser) {

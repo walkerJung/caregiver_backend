@@ -9,7 +9,7 @@ export default {
         }
         const announcement = await client.announcement.findUnique({
           where: {
-            id: announcementCode,
+            code: announcementCode,
           },
         });
         if (!announcement) {
@@ -20,7 +20,7 @@ export default {
         }
         await client.announcement.delete({
           where: {
-            id: announcementCode,
+            code: announcementCode,
           },
         });
         return {
