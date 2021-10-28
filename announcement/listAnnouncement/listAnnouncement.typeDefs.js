@@ -33,6 +33,6 @@ export default gql`
   }
 
   type Query {
-    listAnnouncement: AnnouncementQueryResult!
+    listAnnouncement(userCode: Int, status: Int): AnnouncementQueryResult!
   }
 `;
