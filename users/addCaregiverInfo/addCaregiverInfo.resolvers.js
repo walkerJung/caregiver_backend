@@ -36,6 +36,9 @@ export default {
         if (!existUser) {
           throw new Error("잘못된 접근입니다.");
         }
+        if (existUser.type != "간병인") {
+          throw new Error("잘못된 접근입니다.");
+        }
         await client.caregiverInfo.create({
           data: {
             userCode,
