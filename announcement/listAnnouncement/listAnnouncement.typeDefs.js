@@ -27,7 +27,12 @@ export default gql`
     isolation: Boolean!
   }
 
+  type AnnouncementQueryResult {
+    announcements: [Announcement]!
+    result: Boolean!
+  }
+
   type Query {
-    listAnnouncement: [Announcement]!
+    listAnnouncement: AnnouncementQueryResult!
   }
 `;
