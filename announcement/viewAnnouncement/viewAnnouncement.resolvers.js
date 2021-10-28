@@ -9,6 +9,7 @@ export default {
             code,
           },
         });
+        return announcement;
       } catch (e) {
         return false;
       }
