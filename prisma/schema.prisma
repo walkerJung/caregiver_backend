@@ -61,8 +61,8 @@ model Announcement {
   needHygieneCare         String
   caregiverMeal           String
   infectiousDisease       String
-  expectedCost            String?
-  hopeCost                String?
+  expectedCost            Int?
+  hopeCost                Int?
   title                   String
   startDate               DateTime
   endDate                 DateTime
@@ -86,7 +86,7 @@ model AnnouncementApplication {
   announcement     Announcement @relation(fields: [announcementCode], references: [code])
   announcementCode Int
   userId           String
-  caregiverCost    String
+  caregiverCost    Int
   confirm          Boolean
   createAt         DateTime     @default(now())
   updatedAt        DateTime     @updatedAt
