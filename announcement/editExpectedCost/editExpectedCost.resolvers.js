@@ -2,7 +2,7 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    writeExpectedCost: async (_, { code, expectedCost }) => {
+    editExpectedCost: async (_, { code, expectedCost }) => {
       try {
         await client.announcement.update({
           where: {
@@ -18,7 +18,7 @@ export default {
       } catch (e) {
         return {
           ok: false,
-          error: "예상간병비 등록이 실패하였습니다. 다시 시도해주세요.",
+          error: "예상간병비 수정이 실패하였습니다. 다시 시도해주세요.",
         };
       }
     },
