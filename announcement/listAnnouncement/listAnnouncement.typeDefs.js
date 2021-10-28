@@ -9,12 +9,12 @@ export default gql`
     needSuctionCare: String!
     needMoveCare: String!
     needBedCare: String!
-    needHygieneCare: String1
+    needHygieneCare: String!
     caregiverMeal: String!
     infectiousDisease: String!
     title: String!
-    startDate: DateTime!
-    endDate: DateTime!
+    startDate: String!
+    endDate: String!
     protectorName: String!
     protectorPhone: String!
     patientName: String!
@@ -28,6 +28,6 @@ export default gql`
   }
 
   type Query {
-    ListAnnouncement(): [Announcement]!
+    ListAnnouncement: [Announcement]!
   }
 `;
