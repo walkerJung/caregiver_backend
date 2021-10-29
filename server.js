@@ -2,7 +2,7 @@ require("dotenv").config();
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { typeDefs, resolvers } from "./schema.js";
-import { getUser } from "./application/common/utils";
+import { getUser } from "./users/users.utils";
 
 const PORT = process.env.PORT;
 const server = new ApolloServer({
