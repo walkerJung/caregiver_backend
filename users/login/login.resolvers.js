@@ -21,12 +21,11 @@ export default {
           error: "비밀번호를 확인해 주세요.",
         };
       }
-      const token = await jwt.sign({ id: user.id }, process.env.SECRET_KEY);
+      const token = await jwt.sign({ code: user.code }, process.env.SECRET_KEY);
       return {
         ok: true,
         token,
       };
-      //
     },
   },
 };
