@@ -10,7 +10,6 @@ const server = new ApolloServer({
   resolvers,
   context: async (ctx) => {
     if (ctx.req) {
-      console.log(ctx.req.headers.token);
       return {
         loggedInUser: await getUser(ctx.req.headers.token),
       };
