@@ -15,6 +15,7 @@ export default {
           data: {
             title,
             content,
+            writeIP,
           },
         });
         return {
