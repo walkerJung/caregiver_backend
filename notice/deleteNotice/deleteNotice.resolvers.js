@@ -16,6 +16,7 @@ export default {
           ok: true,
         };
       } catch (e) {
+        console.log(e);
         return {
           ok: false,
           error: "공지사항 삭제에 실패하였습니다. 관리자에게 문의해주세요.",
