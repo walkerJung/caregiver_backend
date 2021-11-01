@@ -11,6 +11,9 @@ export default {
             writeIP = add;
           }
         );
+        if (code) {
+          throw new Error("잘못된 접근입니다.");
+        }
         await client.notice.update({
           where: { code },
           data: {
