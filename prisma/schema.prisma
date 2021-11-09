@@ -85,7 +85,7 @@ model AnnouncementApplication {
   code             Int          @id @default(autoincrement())
   announcement     Announcement @relation(fields: [announcementCode], references: [code])
   announcementCode Int
-  userId           String
+  userId           String       @unique
   caregiverCost    Int
   confirm          Boolean
   createAt         DateTime     @default(now())
