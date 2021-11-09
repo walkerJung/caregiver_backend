@@ -3,7 +3,7 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    editAccount: async (
+    editCaregiverInfo: async (
       _,
       {
         userCode,
