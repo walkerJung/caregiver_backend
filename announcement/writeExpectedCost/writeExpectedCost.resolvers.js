@@ -9,6 +9,7 @@ export default {
             code,
           },
           data: {
+            status: 2,
             expectedCost,
           },
         });

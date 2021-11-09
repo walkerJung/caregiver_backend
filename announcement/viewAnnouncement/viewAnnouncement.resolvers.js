@@ -8,6 +8,9 @@ export default {
           where: {
             code,
           },
+          include: {
+            announcementApplication: true,
+          },
         });
         return announcement;
       } catch (e) {
