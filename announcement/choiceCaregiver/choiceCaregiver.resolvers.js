@@ -2,9 +2,23 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    choiceCaregiver: async (_, { announcementCode, userId }) => {
+    choiceCaregiver: async (
+      _,
+      { announcementCode, userId },
+      { loggedInUser }
+    ) => {
       try {
         if (!announcementCode || !userId) {
+          throw new Error("잘못된 접근입니다.");
+        }
+
+        const announcement = await client.announcement.findUnique({
+          where: {
+            code: announcementCode,
+          },
+        });
+
+        if (announcement.userCode != loggedInUser.code) {
           throw new Error("잘못된 접근입니다.");
         }
 
