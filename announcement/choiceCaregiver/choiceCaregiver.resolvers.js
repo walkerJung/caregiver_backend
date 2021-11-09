@@ -4,11 +4,11 @@ export default {
   Mutation: {
     choiceCaregiver: async (
       _,
-      { code, announcementCode, userId },
+      { code, announcementCode, userCode },
       { loggedInUser }
     ) => {
       try {
-        if (!announcementCode || !userId) {
+        if (!announcementCode || !userCode) {
           throw new Error("잘못된 접근입니다.");
         }
 
