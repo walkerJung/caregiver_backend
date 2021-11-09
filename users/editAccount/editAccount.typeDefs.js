@@ -3,7 +3,7 @@ import { gql } from "apollo-server";
 export default gql`
   type Mutation {
     editAccount(
-      userCode: Ing!
+      userCode: Int!
       phone: String
       userName: String
       password: String
