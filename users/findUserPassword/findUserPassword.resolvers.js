@@ -26,9 +26,19 @@ export default {
         };
       }
 
+      const uglyPassword = await bcrypt.hash("password", 10);
+      await client.user.update({
+        where: {
+          userId: user.userId,
+        },
+        data: {
+          password: uglyPassword,
+        },
+      });
+
       return {
         ok: true,
-        password: user.password,
+        password: "password",
       };
     },
   },
