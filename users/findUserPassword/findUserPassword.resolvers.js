@@ -2,16 +2,18 @@ import client from "../../client";
 
 export default {
   Query: {
-    findUserId: async (_, { phone }) => {
-      if (!phone) {
+    findUserPassword: async (_, { userId, userName, phone }) => {
+      if (!userId || !userName || !phone) {
         return {
           ok: false,
           error: "비정상적인 접근입니다.",
         };
       }
 
-      const user = await client.user.findUnique({
+      const user = await client.user.findFirst({
         where: {
+          userId,
+          phone,
           phone,
         },
       });
@@ -19,13 +21,14 @@ export default {
       if (!user) {
         return {
           ok: false,
-          error: "회원정보를 찾을수 없습니다. 핸드폰번호를 확인해주세요.",
+          error:
+            "회원정보를 찾을수 없습니다. 입력하신 정보를 다시 확인해주세요.",
         };
       }
 
       return {
         ok: true,
-        userId: user.userId,
+        password: user.password,
       };
     },
   },
