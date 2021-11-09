@@ -5,7 +5,7 @@ export default gql`
     choiceCaregiver(
       code: Int!
       announcementCode: Int!
-      userId: String!
+      userCode: Int!
     ): MutationResponse!
   }
 `;
