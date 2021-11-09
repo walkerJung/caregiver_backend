@@ -5,7 +5,19 @@ export default {
   Mutation: {
     editAccount: async (_, { phone, userName, password }, { loggedInUser }) => {
       try {
-        console.log(loggedInUser);
+        await client.user.update({
+          where: {
+            code: loggedInUser.code,
+          },
+          data: {
+            phone,
+            userName,
+            password,
+          },
+        });
+        return {
+          ok: true,
+        };
       } catch (e) {
         return {
           ok: false,
