@@ -23,6 +23,7 @@ export default {
             userId: loggedInUser.userId,
             announcementCode,
             caregiverCost,
+            confirm: false,
             writeIP,
           },
         });
