@@ -30,6 +30,7 @@ export default {
           ok: true,
         };
       } catch (e) {
+        console.log(e);
         return {
           ok: false,
           error: "본인간병비 등록이 실패하였습니다. 다시 시도해주세요.",
