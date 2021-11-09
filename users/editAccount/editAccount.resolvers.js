@@ -3,12 +3,26 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    editAccount: async (_, { phone, userName, password }, { loggedInUser }) => {
+    editAccount: async (
+      _,
+      { userCode, phone, userName, password },
+      { loggedInUser }
+    ) => {
       try {
+        const user = await client.user.findUnique({
+          where: {
+            code: userCode,
+          },
+        });
+
+        if (loggedInUser.code != user.code) {
+          throw new Error("잘못된 접근입니다.");
+        }
+
         const uglyPassword = await bcrypt.hash(password, 10);
         await client.user.update({
           where: {
-            code: loggedInUser.code,
+            code: user.code,
           },
           data: {
             phone,
