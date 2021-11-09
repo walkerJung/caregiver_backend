@@ -8,7 +8,7 @@ export default {
       { loggedInUser }
     ) => {
       try {
-        if (!announcementCode || !userCode) {
+        if (!code || !announcementCode) {
           throw new Error("잘못된 접근입니다.");
         }
 
