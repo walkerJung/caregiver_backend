@@ -2,14 +2,14 @@ import { gql } from "apollo-server";
 
 export default gql`
   type Query {
-    findUserId(phone: String!): findUserIdResult!
+    findUserId(phone: String!): FindUserIdResult!
   }
 
   type UserId {
     userId: String!
   }
 
-  type findUserIdResult {
+  type FindUserIdResult {
     ok: Boolean!
     error: String
     userId: UserId!

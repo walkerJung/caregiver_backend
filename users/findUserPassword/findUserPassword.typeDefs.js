@@ -6,14 +6,14 @@ export default gql`
       userId: String!
       userName: String!
       phone: String!
-    ): findUserPasswordResult!
+    ): FindUserPasswordResult!
   }
 
   type UserPassword {
     password: String!
   }
 
-  type findUserPasswordResult {
+  type FindUserPasswordResult {
     ok: Boolean!
     error: String
     password: UserPassword!
