@@ -18,7 +18,18 @@ export default {
           },
         });
 
-        if (announcement.userCode != loggedInUser.code) {
+        const announcementApplication =
+          await client.announcementApplication.findUnique({
+            where: {
+              code,
+            },
+          });
+
+        if (
+          announcement.userCode != loggedInUser.code ||
+          !announcement ||
+          !announcementApplication
+        ) {
           throw new Error("잘못된 접근입니다.");
         }
 
@@ -37,6 +48,7 @@ export default {
           },
           data: {
             status: 4,
+            confirmCaregiverCode: announcementApplication.userCode,
           },
         });
 

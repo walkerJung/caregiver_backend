@@ -52,7 +52,7 @@ model Announcement {
   user                    User                      @relation(fields: [userCode], references: [code])
   userCode                Int
   announcementApplication AnnouncementApplication[]
-  confirmCaregiverId      Int?
+  confirmCaregiverCode    Int?
   needMealCare            String
   needUrineCare           String
   needSuctionCare         String
