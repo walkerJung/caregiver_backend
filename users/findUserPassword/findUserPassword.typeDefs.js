@@ -2,7 +2,7 @@ import { gql } from "apollo-server";
 
 export default gql`
   type Query {
-    findUserId(
+    findUserPassword(
       userId: String!
       userName: String!
       phone: String!
