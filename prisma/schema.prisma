@@ -28,7 +28,7 @@ model User {
 model CaregiverInfo {
   code           Int      @id @default(autoincrement())
   user           User     @relation(fields: [userCode], references: [code])
-  userCode       Int
+  userCode       Int      @unique
   address        String
   addressDetail  String
   residentNumber String
