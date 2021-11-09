@@ -9,13 +9,9 @@ export default gql`
     ): FindUserPasswordResult!
   }
 
-  type UserPassword {
-    password: String!
-  }
-
   type FindUserPasswordResult {
     ok: Boolean!
     error: String
-    password: UserPassword!
+    password: String!
   }
 `;

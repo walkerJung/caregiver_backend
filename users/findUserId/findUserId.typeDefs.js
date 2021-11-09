@@ -5,13 +5,9 @@ export default gql`
     findUserId(phone: String!): FindUserIdResult!
   }
 
-  type UserId {
-    userId: String!
-  }
-
   type FindUserIdResult {
     ok: Boolean!
     error: String
-    userId: UserId!
+    userId: String!
   }
 `;
