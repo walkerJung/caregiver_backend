@@ -4,7 +4,7 @@ export default {
   Mutation: {
     choiceCaregiver: async (
       _,
-      { announcementCode, userId },
+      { code, announcementCode, userId },
       { loggedInUser }
     ) => {
       try {
@@ -24,8 +24,7 @@ export default {
 
         await client.announcementApplication.update({
           where: {
-            announcementCode,
-            userId,
+            code,
           },
           data: {
             confirm: true,

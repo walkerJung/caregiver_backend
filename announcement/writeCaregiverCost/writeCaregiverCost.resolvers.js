@@ -20,7 +20,7 @@ export default {
         }
         await client.announcementApplication.create({
           data: {
-            userId: loggedInUser.userId,
+            userCode: loggedInUser.code,
             announcementCode,
             caregiverCost,
             confirm: false,
