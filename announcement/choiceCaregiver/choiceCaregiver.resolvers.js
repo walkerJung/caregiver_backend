@@ -4,7 +4,7 @@ export default {
   Mutation: {
     choiceCaregiver: async (
       _,
-      { code, announcementCode, userCode },
+      { code, announcementCode },
       { loggedInUser }
     ) => {
       try {
