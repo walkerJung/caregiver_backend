@@ -12,6 +12,7 @@ export default {
             CaregiverInfo: true,
           },
         });
+        console.log(user);
         return user;
       } catch (e) {
         return false;
