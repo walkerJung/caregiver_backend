@@ -3,7 +3,7 @@ import client from "../../client";
 export default {
   Query: {
     viewProfile: (_, { code }) =>
-      client.user.findUnique({
+      client.user.findMany({
         where: {
           code,
         },
