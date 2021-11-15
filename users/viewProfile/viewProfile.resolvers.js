@@ -7,6 +7,9 @@ export default {
         where: {
           code,
         },
+        include: {
+          CaregiverInfo: true,
+        },
       }),
   },
 };
