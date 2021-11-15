@@ -9,6 +9,6 @@ export default gql`
     password: String!
     sex: String!
     phone: String!
-    createedAt: String!
+    createdAt: String!
   }
 `;
