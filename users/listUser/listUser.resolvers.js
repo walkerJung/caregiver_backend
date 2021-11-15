@@ -4,7 +4,11 @@ export default {
   Query: {
     listUser: async (_) => {
       try {
-        const users = await client.user.findMany();
+        const users = await client.user.findMany({
+          include: {
+            CaregiverInfo: true,
+          },
+        });
         return {
           users,
           result: true,
