@@ -8,6 +8,9 @@ export default {
           where: {
             code,
           },
+          include: {
+            CaregiverInfo: true,
+          },
         });
         return user;
       } catch (e) {
