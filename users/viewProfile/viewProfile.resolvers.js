@@ -2,10 +2,10 @@ import client from "../../client";
 
 export default {
   Query: {
-    viewProfile: (_, { userId }) =>
+    viewProfile: (_, { code }) =>
       client.user.findUnique({
         where: {
-          userId,
+          code,
         },
       }),
   },
