@@ -4,7 +4,7 @@ export default {
   Query: {
     viewCaregiverInfo: (_, { userCode }) => {
       try {
-        const caregiverInfo = client.user.findUnique({
+        const caregiverInfo = client.caregiverInfo.findUnique({
           where: {
             userCode,
           },
