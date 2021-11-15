@@ -2,14 +2,14 @@ import client from "../../client";
 
 export default {
   Query: {
-    viewProfile: (_, { code }) => {
+    viewCaregiverInfo: (_, { userCode }) => {
       try {
-        const user = client.user.findUnique({
+        const caregiverInfo = client.user.findUnique({
           where: {
-            code,
+            userCode,
           },
         });
-        return user;
+        return caregiverInfo;
       } catch (e) {
         return false;
       }
