@@ -25,6 +25,7 @@ export default gql`
     nursingGrade: String!
     disease: String!
     isolation: Boolean!
+    createdAt: String!
   }
 
   type AnnouncementQueryResult {
