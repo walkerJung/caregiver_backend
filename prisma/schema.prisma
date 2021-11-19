@@ -76,7 +76,7 @@ model Announcement {
   nursingGrade            String
   disease                 String
   isolation               Boolean
-  createAt                DateTime                  @default(now())
+  createdAt               DateTime                  @default(now())
   updatedAt               DateTime                  @updatedAt
   writeIP                 String
 }
@@ -88,7 +88,7 @@ model AnnouncementApplication {
   userCode         Int          @unique
   caregiverCost    Int
   confirm          Boolean
-  createAt         DateTime     @default(now())
+  createdAt        DateTime     @default(now())
   updatedAt        DateTime     @updatedAt
   writeIP          String
 }
@@ -97,7 +97,7 @@ model Notice {
   code      Int      @id @default(autoincrement())
   title     String
   content   String
-  createAt  DateTime @default(now())
+  createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   writeIP   String
 
