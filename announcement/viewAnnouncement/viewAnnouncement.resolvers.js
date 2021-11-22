@@ -9,8 +9,8 @@ export default {
             code,
           },
           include: {
-            AnnouncementApplication: true,
-            User: true,
+            announcementApplication: true,
+            user: true,
           },
         });
         return announcement;
