@@ -28,7 +28,7 @@ export default gql`
     isolation: Boolean!
     createdAt: String!
     announcementApplication: [AnnouncementApplication]
-    user: [User]
+    user: User
   }
 
   type AnnouncementApplication {
