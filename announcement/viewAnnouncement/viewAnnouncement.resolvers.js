@@ -15,6 +15,7 @@ export default {
         });
         return announcement;
       } catch (e) {
+        console.log(e);
         return false;
       }
     },
