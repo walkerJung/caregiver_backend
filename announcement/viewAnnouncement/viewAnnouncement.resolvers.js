@@ -10,6 +10,7 @@ export default {
           },
           include: {
             announcementApplication: true,
+            user: true,
           },
         });
         return announcement;
