@@ -29,6 +29,15 @@ export default gql`
     createdAt: String!
   }
 
+  type AnnouncementApplication {
+    code: Int!
+    announcementCode: Int!
+    userCode: Int!
+    caregiverCost: Int!
+    confirm: Boolean!
+    createdAt: String!
+  }
+
   type AnnouncementQueryResult {
     announcements: [Announcement]!
     result: Boolean!
