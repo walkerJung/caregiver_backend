@@ -2,6 +2,7 @@ import { gql } from "apollo-server";
 
 export default gql`
   type Announcement {
+    code: Int!
     status: Int!
     userCode: Int!
     needMealCare: String!
