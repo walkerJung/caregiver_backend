@@ -27,6 +27,8 @@ export default gql`
     disease: String!
     isolation: Boolean!
     createdAt: String!
+    AnnouncementApplication: [AnnouncementApplication]
+    User: [User]
   }
 
   type AnnouncementApplication {
