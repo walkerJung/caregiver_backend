@@ -40,6 +40,7 @@ export default gql`
     caregiverCost: Int!
     confirm: Boolean!
     createdAt: String!
+    user: User
   }
 
   type AnnouncementQueryResult {
