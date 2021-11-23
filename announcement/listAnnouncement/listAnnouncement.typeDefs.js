@@ -45,6 +45,7 @@ export default gql`
 
   type AnnouncementQueryResult {
     announcements: [Announcement]!
+    announcementApplication: AnnouncementApplication
     result: Boolean!
   }
 

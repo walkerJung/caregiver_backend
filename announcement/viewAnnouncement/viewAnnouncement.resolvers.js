@@ -13,7 +13,23 @@ export default {
             user: true,
           },
         });
-        return announcement;
+
+        const choiceAnnouncementApplication =
+          await client.announcementApplication.findFirst({
+            where: {
+              announcementCode: announcement.code,
+              confirm: true,
+            },
+            include: {
+              user: true,
+            },
+          });
+        return {
+          announcement,
+          choiceAnnouncementApplication: choiceAnnouncementApplication
+            ? choiceAnnouncementApplication
+            : null,
+        };
       } catch (e) {
         console.log(e);
         return false;
