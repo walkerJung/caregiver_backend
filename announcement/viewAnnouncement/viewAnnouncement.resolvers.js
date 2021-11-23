@@ -14,17 +14,7 @@ export default {
           },
         });
 
-        const choiceAnnouncementApplication =
-          await client.announcementApplication.findFirst({
-            where: {
-              announcementCode: announcement.code,
-              confirm: true,
-            },
-            include: {
-              user: true,
-            },
-          });
-        return announcement, choiceAnnouncementApplication;
+        return announcement;
       } catch (e) {
         console.log(e);
         return false;
