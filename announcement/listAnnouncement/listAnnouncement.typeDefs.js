@@ -16,6 +16,8 @@ export default gql`
     title: String!
     startDate: String!
     endDate: String!
+    expectedCost: Int!
+    hopeCost: Int!
     protectorName: String!
     protectorPhone: String!
     patientName: String!
