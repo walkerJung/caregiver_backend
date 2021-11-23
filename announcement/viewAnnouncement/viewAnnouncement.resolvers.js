@@ -24,12 +24,7 @@ export default {
               user: true,
             },
           });
-        return {
-          announcement,
-          choiceAnnouncementApplication: choiceAnnouncementApplication
-            ? choiceAnnouncementApplication
-            : null,
-        };
+        return announcement, choiceAnnouncementApplication;
       } catch (e) {
         console.log(e);
         return false;
