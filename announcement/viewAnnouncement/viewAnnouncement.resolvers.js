@@ -9,7 +9,11 @@ export default {
             code,
           },
           include: {
-            announcementApplication: true,
+            announcementApplication: {
+              include: {
+                user: true,
+              },
+            },
             user: true,
           },
         });
