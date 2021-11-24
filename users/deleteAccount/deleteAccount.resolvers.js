@@ -46,12 +46,12 @@ export default {
             },
           });
           await announcements.map((item) => {
-            await client.announcementApplication.deleteMany({
+            client.announcementApplication.deleteMany({
               where: {
                 announcementCode: item.code,
               },
             });
-            await client.announcement.delete({
+            client.announcement.delete({
               where: {
                 code: item.code,
               },
