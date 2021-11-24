@@ -2,9 +2,12 @@ import client from "../../client";
 
 export default {
   Query: {
-    listUser: async (_) => {
+    listUser: async (_, { type }) => {
       try {
         const users = await client.user.findMany({
+          where: {
+            type,
+          },
           include: {
             CaregiverInfo: true,
           },
