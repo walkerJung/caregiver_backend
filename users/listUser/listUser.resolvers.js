@@ -6,7 +6,7 @@ export default {
       try {
         const users = await client.user.findMany({
           where: {
-            type,
+            userType: type,
           },
           include: {
             CaregiverInfo: true,
