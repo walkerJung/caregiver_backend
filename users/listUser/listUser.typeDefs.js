@@ -17,6 +17,6 @@ export default gql`
   }
 
   type Query {
-    listUser(type: String!): UserQueryResult!
+    listUser(type: String!, skip: Int!, first: Int!): UserQueryResult!
   }
 `;
