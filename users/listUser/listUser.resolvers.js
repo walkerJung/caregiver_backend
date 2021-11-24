@@ -15,7 +15,7 @@ export default {
             CaregiverInfo: true,
           },
         });
-        const count = await prisma.user.count({
+        const count = await client.user.count({
           where: {
             userType: type,
           },
