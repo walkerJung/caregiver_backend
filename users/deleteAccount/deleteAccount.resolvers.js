@@ -55,18 +55,18 @@ export default {
                 userCode: null,
               },
             });
-            client.announcementApplication.deleteMany({
-              where: {
-                announcementCode: item.code,
-              },
-            });
+            // client.announcementApplication.deleteMany({
+            //   where: {
+            //     announcementCode: item.code,
+            //   },
+            // });
           });
 
-          await client.announcement.deleteMany({
-            where: {
-              userCode: code,
-            },
-          });
+          // await client.announcement.deleteMany({
+          //   where: {
+          //     userCode: code,
+          //   },
+          // });
         }
 
         await client.user.delete({
