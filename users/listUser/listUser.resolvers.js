@@ -1,3 +1,4 @@
+import { prisma } from ".prisma/client";
 import client from "../../client";
 
 export default {
@@ -14,8 +15,14 @@ export default {
             CaregiverInfo: true,
           },
         });
+        const count = await prisma.user.count({
+          where: {
+            userType: type,
+          },
+        });
         return {
           users,
+          count,
           result: true,
         };
       } catch (e) {

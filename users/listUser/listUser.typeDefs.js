@@ -13,6 +13,7 @@ export default gql`
 
   type UserQueryResult {
     users: [User]!
+    count: Int!
     result: Boolean!
   }
 
