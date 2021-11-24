@@ -24,11 +24,13 @@ export default {
 
         // 간병인 회원인 경우 간병인정보와 간병 지원내역 삭제
         if (user.userType === "간병인") {
-          await client.caregiverInfo.delete({
-            where: {
-              code: caregiverInfo.code,
-            },
-          });
+          if (caregiverInfo) {
+            await client.caregiverInfo.delete({
+              where: {
+                code: caregiverInfo.code,
+              },
+            });
+          }
           await client.announceApplication.deleteMany({
             where: {
               userCode: code,
