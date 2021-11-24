@@ -18,15 +18,6 @@ export default {
         if (!announcementCode) {
           throw new Error("잘못된 접근입니다.");
         }
-        const announcementApplication =
-          await client.announcementApplication.findUnique({
-            where: {
-              code: announcementCode,
-            },
-          });
-        if (announcementApplication.userCode == loggedInUser.code) {
-          throw new Error("이미 지원한 공고에는 중복으로 지원할수 없습니다.");
-        }
         await client.announcementApplication.create({
           data: {
             userCode: loggedInUser.code,
