@@ -45,7 +45,9 @@ export default {
               userCode: code,
             },
           });
+          console.log(announcements);
           await announcements.map((item) => {
+            console.log(item);
             client.announcementApplication.deleteMany({
               where: {
                 announcementCode: item.code,
