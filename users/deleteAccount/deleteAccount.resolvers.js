@@ -38,6 +38,27 @@ export default {
           });
         }
 
+        // 환자 회원인 경우 환자가 올린 공고와 해당 공고에 대한 신청내역 삭제
+        if (user.userType === "환자") {
+          const announcements = await client.announcement.findMany({
+            where: {
+              userCode: code,
+            },
+          });
+          await announcements.map((item) => {
+            await client.announcementApplication.deleteMany({
+              where: {
+                announcementCode: item.code,
+              },
+            });
+            await client.announcement.delete({
+              where: {
+                code: item.code,
+              },
+            });
+          });
+        }
+
         await client.user.delete({
           where: {
             code,
