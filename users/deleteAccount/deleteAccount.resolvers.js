@@ -30,6 +30,12 @@ export default {
           });
         }
 
+        await client.announceApplication.deleteMany({
+          where: {
+            userCode: code,
+          },
+        });
+
         await client.user.delete({
           where: {
             code,
