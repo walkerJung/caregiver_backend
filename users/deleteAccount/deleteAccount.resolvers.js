@@ -15,6 +15,21 @@ export default {
         if (!user) {
           throw new Error("이미 삭제된 회원입니다.");
         }
+
+        const caregiverInfo = await client.caregiverInfo.findUnique({
+          where: {
+            userCode: code,
+          },
+        });
+
+        if (caregiverInfo) {
+          await client.caregiverInfo.delete({
+            where: {
+              code: caregiverInfo.code,
+            },
+          });
+        }
+
         await client.user.delete({
           where: {
             code,
