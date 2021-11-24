@@ -45,18 +45,27 @@ export default {
               userCode: code,
             },
           });
-          // console.log(announcements);
-          // await client.announcement.deleteMany({
-          //   where: {
-          //     userCode: code,
-          //   },
-          // });
+
           await announcements.map((item) => {
+            client.announcementApplication.updateMany({
+              where: {
+                announcementCode: item.code,
+              },
+              data: {
+                userCode: null,
+              },
+            });
             client.announcementApplication.deleteMany({
               where: {
                 announcementCode: item.code,
               },
             });
+          });
+
+          await client.announcement.deleteMany({
+            where: {
+              userCode: code,
+            },
           });
         }
 
