@@ -28,5 +28,6 @@ export default gql`
     phone: String!
     createdAt: String!
     CaregiverInfo: [CaregiverInfo]
+      @relation(name: "CaregiverInfo", onDelete: CASCADE)
   }
 `;
