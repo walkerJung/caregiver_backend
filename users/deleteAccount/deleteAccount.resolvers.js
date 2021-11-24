@@ -23,7 +23,7 @@ export default {
         });
 
         // 간병인 회원인 경우 간병인정보와 간병 지원내역 삭제
-        if (caregiverInfo) {
+        if (user.userType === "간병인") {
           await client.caregiverInfo.delete({
             where: {
               code: caregiverInfo.code,
