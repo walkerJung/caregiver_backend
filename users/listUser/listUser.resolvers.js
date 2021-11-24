@@ -20,6 +20,7 @@ export default {
             userType: type,
           },
         });
+        console.log(count);
         return {
           users,
           count,
