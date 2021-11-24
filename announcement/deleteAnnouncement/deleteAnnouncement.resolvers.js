@@ -18,6 +18,11 @@ export default {
         if (announcement.userCode != userCode && userCode != 1) {
           throw new Error("본인이 작성한 공고만 삭제 가능합니다.");
         }
+        await client.announcementApplication.deleteMany({
+          where: {
+            announcementCode,
+          },
+        });
         await client.announcement.delete({
           where: {
             code: announcementCode,
