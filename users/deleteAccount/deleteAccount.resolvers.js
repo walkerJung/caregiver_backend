@@ -46,18 +46,18 @@ export default {
             },
           });
           // console.log(announcements);
-          await client.announcement.deleteMany({
-            where: {
-              userCode: code,
-            },
-          });
-          // await announcements.map((item) => {
-          //   client.announcementApplication.deleteMany({
-          //     where: {
-          //       announcementCode: item.code,
-          //     },
-          //   });
+          // await client.announcement.deleteMany({
+          //   where: {
+          //     userCode: code,
+          //   },
           // });
+          await announcements.map((item) => {
+            client.announcementApplication.deleteMany({
+              where: {
+                announcementCode: item.code,
+              },
+            });
+          });
         }
 
         await client.user.delete({
