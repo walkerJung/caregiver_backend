@@ -46,7 +46,7 @@ export default {
             },
           });
 
-          announcements.map((item) => {
+          announcements.map(async (item) => {
             await client.announcementApplication.deleteMany({
               where: {
                 announcementCode: item.code,
