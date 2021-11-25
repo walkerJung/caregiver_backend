@@ -46,10 +46,16 @@ export default gql`
   type AnnouncementQueryResult {
     announcements: [Announcement]!
     announcementApplication: AnnouncementApplication
+    count: Int!
     result: Boolean!
   }
 
   type Query {
-    listAnnouncement(userCode: Int, status: Int): AnnouncementQueryResult!
+    listAnnouncement(
+      userCode: Int
+      status: Int
+      take: Int!
+      skip: Int!
+    ): AnnouncementQueryResult!
   }
 `;

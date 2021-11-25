@@ -3,11 +3,11 @@ import client from "../../client";
 
 export default {
   Query: {
-    listUser: async (_, { type, skip, first }) => {
+    listUser: async (_, { type, skip, take }) => {
       try {
         const users = await client.user.findMany({
           skip,
-          take: first,
+          take,
           where: {
             userType: type,
           },
@@ -20,14 +20,12 @@ export default {
             userType: type,
           },
         });
-        console.log(count);
         return {
           users,
           count,
           result: true,
         };
       } catch (e) {
-        console.log(e);
         return {
           result: false,
         };

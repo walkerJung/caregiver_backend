@@ -11,10 +11,11 @@ export default gql`
 
   type NoticeQueryResult {
     notices: [Notice]!
+    count: Int!
     result: Boolean!
   }
 
   type Query {
-    listNotice: NoticeQueryResult!
+    listNotice(take: Int!, skip: Int!): NoticeQueryResult!
   }
 `;
