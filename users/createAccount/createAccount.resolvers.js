@@ -46,10 +46,10 @@ export default {
         return {
           ok: true,
         };
-      } catch (e) {
+      } catch (error) {
         return {
           ok: false,
-          error: "회원가입에 실패하였습니다. 관리자에게 문의해주세요.",
+          error,
         };
       }
     },
