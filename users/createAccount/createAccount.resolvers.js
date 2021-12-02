@@ -60,6 +60,7 @@ export default {
               password: uglyPassword,
               sex,
               phone,
+              writeIP,
             },
           });
         } else {
@@ -71,6 +72,7 @@ export default {
               password: uglyPassword,
               sex,
               phone,
+              writeIP,
               CaregiverInfo: [
                 residentNumber,
                 idCard,
