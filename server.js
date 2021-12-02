@@ -1,6 +1,7 @@
 require("dotenv").config();
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
+import { graphqlUploadExpress, GraphQLUpload } from "graphql-upload";
 import { typeDefs, resolvers } from "./schema.js";
 import { getUser } from "./users/users.utils";
 
@@ -26,6 +27,7 @@ const server = new ApolloServer({
 
 const app = express();
 app.use("/files", express.static("files"));
+app.use(graphqlUploadExpress());
 server.applyMiddleware({ app });
 app.listen({ port: PORT }, () => {
   console.log(`🚀Server is running on http://localhost:${PORT} ✅`);

@@ -3,6 +3,7 @@ import client from "../../client";
 import { createWriteStream } from "fs";
 
 export default {
+  Upload: GraphQLUpload,
   Mutation: {
     createAccount: async (
       _,
