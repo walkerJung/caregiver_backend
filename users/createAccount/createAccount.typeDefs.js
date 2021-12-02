@@ -2,6 +2,7 @@ import { gql } from "apollo-server";
 
 export default gql`
   scalar Upload
+  scalar Upload2
 
   type Mutation {
     createAccount(
@@ -15,7 +16,7 @@ export default gql`
       addressDetail: String
       residentNumber: String
       idCard: Upload
-      bankInfo: Upload
+      bankInfo: Upload2
       smoke: String
       drink: String
       mealCare: String
