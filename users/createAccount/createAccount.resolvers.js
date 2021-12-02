@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import client from "../../client";
 import { createWriteStream } from "fs";
+import { GraphQLUpload } from "graphql-upload";
 
 export default {
   Upload: GraphQLUpload,
