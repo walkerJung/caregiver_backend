@@ -28,18 +28,6 @@ export default {
       }
     ) => {
       try {
-        let idCardUrl = null;
-        if (idCard) {
-          const { filename, createReadStream } = await avatar;
-          const newFilename = `${userId}-${Date.now()}-${filename}`;
-          const readStream = createReadStream();
-          const writeStream = createWriteStream(
-            process.cwd() + "/files/" + newFilename
-          );
-          readStream.pipe(writeStream);
-          idCardUrl = `http://localhost:4000/static/${newFilename}`;
-        }
-        console.log(idCardUrl);
         var writeIP = ""; // IP 주소
         require("dns").lookup(
           require("os").hostname(),
@@ -77,6 +65,19 @@ export default {
             },
           });
         } else {
+          let idCardUrl = null;
+          if (idCard) {
+            const { filename, createReadStream } = await avatar;
+            const newFilename = `${userId}-${Date.now()}-${filename}`;
+            const readStream = createReadStream();
+            const writeStream = createWriteStream(
+              process.cwd() + "/files/" + newFilename
+            );
+            readStream.pipe(writeStream);
+            idCardUrl = `http://localhost:4000/static/${newFilename}`;
+          }
+          console.log(idCardUrl);
+
           await client.user.create({
             data: {
               userId,
