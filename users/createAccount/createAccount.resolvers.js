@@ -5,7 +5,26 @@ export default {
   Mutation: {
     createAccount: async (
       _,
-      { userId, userType, userName, password, sex, phone }
+      {
+        userId,
+        userType,
+        userName,
+        password,
+        sex,
+        phone,
+        residentNumber,
+        idCard,
+        smoke,
+        drink,
+        mealCare,
+        urineCare,
+        suctionCare,
+        moveCare,
+        bedCare,
+        address,
+        addressDetail,
+        bankInfo,
+      }
     ) => {
       try {
         var writeIP = ""; // IP 주소
@@ -32,17 +51,44 @@ export default {
           throw new Error("동일한 회원연락처가 존재합니다.");
         }
         const uglyPassword = await bcrypt.hash(password, 10);
-        await client.user.create({
-          data: {
-            userId,
-            userType,
-            userName,
-            password: uglyPassword,
-            sex,
-            phone,
-            writeIP,
-          },
-        });
+        if (userType === "환자") {
+          await client.user.create({
+            data: {
+              userId,
+              userType,
+              userName,
+              password: uglyPassword,
+              sex,
+              phone,
+            },
+          });
+        } else {
+          await client.user.create({
+            data: {
+              userId,
+              userType,
+              userName,
+              password: uglyPassword,
+              sex,
+              phone,
+              CaregiverInfo: [
+                residentNumber,
+                idCard,
+                smoke,
+                drink,
+                mealCare,
+                urineCare,
+                suctionCare,
+                moveCare,
+                bedCare,
+                address,
+                addressDetail,
+                bankInfo,
+              ],
+            },
+          });
+        }
+
         return {
           ok: true,
         };
