@@ -67,7 +67,7 @@ export default {
         } else {
           let idCardUrl = null;
           if (idCard) {
-            const { filename, createReadStream } = await avatar;
+            const { filename, createReadStream } = await idCard;
             const newFilename = `${userId}-${Date.now()}-${filename}`;
             const readStream = createReadStream();
             const writeStream = createWriteStream(
