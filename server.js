@@ -27,9 +27,6 @@ const server = new ApolloServer({
 const app = express();
 app.use("/files", express.static("files"));
 server.applyMiddleware({ app });
-const httpServer = http.createServer(app);
-apollo.installSubscriptionHandlers(httpServer);
-
-httpServer.listen({ port: PORT }, () => {
+app.listen({ port: PORT }, () => {
   console.log(`🚀Server is running on http://localhost:${PORT} ✅`);
 });
