@@ -66,6 +66,7 @@ export default {
           });
         } else {
           let idCardUrl = null;
+          console.log("imhere");
           if (idCard) {
             const { filename, createReadStream } = await idCard;
             const newFilename = `${userId}-${Date.now()}-${filename}`;
