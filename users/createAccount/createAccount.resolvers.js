@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import client from "../../client";
+import { createWriteStream } from "fs";
 
 export default {
   Mutation: {
