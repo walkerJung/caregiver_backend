@@ -115,6 +115,7 @@ export default {
                     address,
                     addressDetail,
                     // bankInfo: bankInfoUrl,
+                    writeIP,
                   },
                 ],
               },
