@@ -14,7 +14,7 @@ export default {
         sex,
         phone,
         residentNumber,
-        idCard,
+        // idCard,
         smoke,
         drink,
         mealCare,
@@ -24,7 +24,7 @@ export default {
         bedCare,
         address,
         addressDetail,
-        bankInfo,
+        // bankInfo,
       }
     ) => {
       try {
@@ -65,31 +65,31 @@ export default {
             },
           });
         } else {
-          let idCardUrl = null;
-          if (idCard) {
-            console.log(idCard);
-            const { filename, createReadStream } = await idCard.file;
-            const newFilename = `${userId}-${Date.now()}-${filename}`;
-            const readStream = createReadStream();
-            const writeStream = createWriteStream(
-              process.cwd() + "/files/" + newFilename
-            );
-            readStream.pipe(writeStream);
-            idCardUrl = `http://localhost:4000/static/${newFilename}`;
-          }
+          // let idCardUrl = null;
+          // if (idCard) {
+          //   console.log(idCard);
+          //   const { filename, createReadStream } = await idCard.file;
+          //   const newFilename = `${userId}-${Date.now()}-${filename}`;
+          //   const readStream = createReadStream();
+          //   const writeStream = createWriteStream(
+          //     process.cwd() + "/files/" + newFilename
+          //   );
+          //   readStream.pipe(writeStream);
+          //   idCardUrl = `http://localhost:4000/static/${newFilename}`;
+          // }
 
-          let bankInfoUrl = null;
-          if (bankInfo) {
-            console.log(bankInfo);
-            const { filename, createReadStream } = await bankInfo.file;
-            const newFilename = `${userId}-${Date.now()}-${filename}`;
-            const readStream = createReadStream();
-            const writeStream = createWriteStream(
-              process.cwd() + "/files/" + newFilename
-            );
-            readStream.pipe(writeStream);
-            bankInfoUrl = `http://localhost:4000/static/${newFilename}`;
-          }
+          // let bankInfoUrl = null;
+          // if (bankInfo) {
+          //   console.log(bankInfo);
+          //   const { filename, createReadStream } = await bankInfo.file;
+          //   const newFilename = `${userId}-${Date.now()}-${filename}`;
+          //   const readStream = createReadStream();
+          //   const writeStream = createWriteStream(
+          //     process.cwd() + "/files/" + newFilename
+          //   );
+          //   readStream.pipe(writeStream);
+          //   bankInfoUrl = `http://localhost:4000/static/${newFilename}`;
+          // }
 
           await client.user.create({
             data: {
@@ -103,7 +103,7 @@ export default {
               CaregiverInfo: [
                 {
                   residentNumber,
-                  idCard: idCardUrl,
+                  // idCard: idCardUrl,
                   smoke,
                   drink,
                   mealCare,
@@ -113,7 +113,7 @@ export default {
                   bedCare,
                   address,
                   addressDetail,
-                  bankInfo: bankInfoUrl,
+                  // bankInfo: bankInfoUrl,
                 },
               ],
             },
