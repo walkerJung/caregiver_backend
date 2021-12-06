@@ -67,6 +67,7 @@ export default {
         } else {
           let idCardUrl = null;
           if (idCard) {
+            console.log(idCard);
             const { filename, createReadStream } = await idCard.file;
             const newFilename = `${userId}-${Date.now()}-${filename}`;
             const readStream = createReadStream();
@@ -79,6 +80,7 @@ export default {
 
           let bankInfoUrl = null;
           if (bankInfo) {
+            console.log(bankInfo);
             const { filename, createReadStream } = await bankInfo.file;
             const newFilename = `${userId}-${Date.now()}-${filename}`;
             const readStream = createReadStream();
