@@ -104,7 +104,7 @@ export default {
                 create: [
                   {
                     residentNumber,
-                    // idCard: idCardUrl,
+                    idCard: "idCard",
                     smoke,
                     drink,
                     mealCare,
@@ -114,7 +114,7 @@ export default {
                     bedCare,
                     address,
                     addressDetail,
-                    // bankInfo: bankInfoUrl,
+                    bankInfo: "bankInfo",
                     writeIP,
                   },
                 ],
