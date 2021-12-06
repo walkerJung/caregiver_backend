@@ -27,7 +27,6 @@ export default {
         bankInfo,
       }
     ) => {
-      console.log(idCard);
       try {
         var writeIP = ""; // IP 주소
         require("dns").lookup(
@@ -67,9 +66,8 @@ export default {
           });
         } else {
           let idCardUrl = null;
-          console.log("imhere");
           if (idCard) {
-            const { filename, createReadStream } = await idCard;
+            const { filename, createReadStream } = await idCard.file;
             const newFilename = `${userId}-${Date.now()}-${filename}`;
             const readStream = createReadStream();
             const writeStream = createWriteStream(
@@ -78,7 +76,18 @@ export default {
             readStream.pipe(writeStream);
             idCardUrl = `http://localhost:4000/static/${newFilename}`;
           }
-          console.log(idCardUrl);
+
+          let bankInfoUrl = null;
+          if (bankInfo) {
+            const { filename, createReadStream } = await bankInfo.file;
+            const newFilename = `${userId}-${Date.now()}-${filename}`;
+            const readStream = createReadStream();
+            const writeStream = createWriteStream(
+              process.cwd() + "/files/" + newFilename
+            );
+            readStream.pipe(writeStream);
+            bankInfoUrl = `http://localhost:4000/static/${newFilename}`;
+          }
 
           await client.user.create({
             data: {
@@ -102,7 +111,7 @@ export default {
                   bedCare,
                   address,
                   addressDetail,
-                  bankInfo,
+                  bankInfo: bankInfoUrl,
                 },
               ],
             },
