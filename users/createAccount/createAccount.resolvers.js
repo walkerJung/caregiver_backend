@@ -100,22 +100,24 @@ export default {
               sex,
               phone,
               writeIP,
-              CaregiverInfo: [
-                {
-                  residentNumber,
-                  // idCard: idCardUrl,
-                  smoke,
-                  drink,
-                  mealCare,
-                  urineCare,
-                  suctionCare,
-                  moveCare,
-                  bedCare,
-                  address,
-                  addressDetail,
-                  // bankInfo: bankInfoUrl,
-                },
-              ],
+              CaregiverInfo: {
+                create: [
+                  {
+                    residentNumber,
+                    // idCard: idCardUrl,
+                    smoke,
+                    drink,
+                    mealCare,
+                    urineCare,
+                    suctionCare,
+                    moveCare,
+                    bedCare,
+                    address,
+                    addressDetail,
+                    // bankInfo: bankInfoUrl,
+                  },
+                ],
+              },
             },
           });
         }
