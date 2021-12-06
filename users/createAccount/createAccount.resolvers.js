@@ -27,6 +27,7 @@ export default {
         bankInfo,
       }
     ) => {
+      console.log(idCard);
       try {
         var writeIP = ""; // IP 주소
         require("dns").lookup(
