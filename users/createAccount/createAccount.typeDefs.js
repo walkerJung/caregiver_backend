@@ -15,7 +15,7 @@ export default gql`
       addressDetail: String
       residentNumber: String
       idCard: Upload
-      bankInfo: String
+      bankInfo: Upload
       smoke: String
       drink: String
       mealCare: String
