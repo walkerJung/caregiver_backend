@@ -16,6 +16,6 @@ export default gql`
   }
 
   type Query {
-    listNotice(take: Int!, skip: Int!): NoticeQueryResult!
+    listNotice(take: Int, skip: Int): NoticeQueryResult!
   }
 `;
