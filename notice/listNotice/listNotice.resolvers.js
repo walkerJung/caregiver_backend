@@ -7,6 +7,9 @@ export default {
         const notices = await client.notice.findMany({
           skip,
           take,
+          orderBy: {
+            code: "desc",
+          },
         });
         const count = await client.notice.count();
         return {
