@@ -16,6 +16,8 @@ export default gql`
       title: String!
       startDate: String!
       endDate: String!
+      startTime: String!
+      endTime: String!
       protectorName: String!
       protectorPhone: String!
       patientName: String!

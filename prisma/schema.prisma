@@ -65,8 +65,10 @@ model Announcement {
   expectedCost            Int?
   hopeCost                Int?
   title                   String
-  startDate               DateTime
-  endDate                 DateTime
+  startDate               String
+  endDate                 String
+  startTime               String
+  endTime                 String
   protectorName           String
   protectorPhone          String
   patientName             String
