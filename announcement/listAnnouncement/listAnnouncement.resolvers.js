@@ -11,6 +11,9 @@ export default {
             where: {
               userCode,
             },
+            orderBy: {
+              code: "desc",
+            },
           });
           const count = await client.announcement.count({
             where: {
@@ -29,6 +32,9 @@ export default {
             where: {
               status,
             },
+            orderBy: {
+              code: "desc",
+            },
           });
           const count = await client.announcement.count({
             where: {
@@ -41,7 +47,11 @@ export default {
             result: true,
           };
         } else {
-          const announcements = await client.announcement.findMany();
+          const announcements = await client.announcement.findMany({
+            orderBy: {
+              code: "desc",
+            },
+          });
           const count = await client.announcement.count();
           return {
             announcements,
