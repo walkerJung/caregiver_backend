@@ -54,8 +54,8 @@ export default gql`
     listAnnouncement(
       userCode: Int
       status: Int
-      take: Int!
-      skip: Int!
+      take: Int
+      skip: Int
     ): AnnouncementQueryResult!
   }
 `;
