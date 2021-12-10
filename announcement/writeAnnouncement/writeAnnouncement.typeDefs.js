@@ -27,7 +27,7 @@ export default gql`
       addressDetail: String!
       nursingGrade: String!
       disease: String!
-      isolation: Boolean!
+      isolation: String!
     ): MutationResponse!
   }
 `;

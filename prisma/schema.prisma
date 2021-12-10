@@ -78,7 +78,7 @@ model Announcement {
   addressDetail           String
   nursingGrade            String
   disease                 String
-  isolation               Boolean
+  isolation               String
   createdAt               DateTime                  @default(now())
   updatedAt               DateTime                  @updatedAt
   writeIP                 String
