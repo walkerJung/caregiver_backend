@@ -4,6 +4,7 @@ export default gql`
   type Announcement {
     code: Int!
     status: Int!
+    confirmCaregiverCode: Int
     userCode: Int!
     needMealCare: String!
     needUrineCare: String!
