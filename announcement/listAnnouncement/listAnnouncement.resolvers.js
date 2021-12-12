@@ -11,6 +11,14 @@ export default {
             where: {
               userCode,
             },
+            include: {
+              announcementApplication: {
+                include: {
+                  user: true,
+                },
+              },
+              user: true,
+            },
             orderBy: {
               code: "desc",
             },
@@ -32,6 +40,14 @@ export default {
             where: {
               status,
             },
+            include: {
+              announcementApplication: {
+                include: {
+                  user: true,
+                },
+              },
+              user: true,
+            },
             orderBy: {
               code: "desc",
             },
@@ -48,6 +64,14 @@ export default {
           };
         } else {
           const announcements = await client.announcement.findMany({
+            include: {
+              announcementApplication: {
+                include: {
+                  user: true,
+                },
+              },
+              user: true,
+            },
             orderBy: {
               code: "desc",
             },
