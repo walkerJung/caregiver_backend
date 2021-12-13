@@ -2,7 +2,7 @@ import client from "../../client";
 
 export default {
   Mutation: {
-    deleteAnnouncement: async (_, { userCode, announcementCode }) => {
+    deleteAnnouncement: async (_, { announcementCode }) => {
       try {
         if (!announcementCode) {
           throw new Error("잘못된 접근입니다.");
@@ -14,9 +14,6 @@ export default {
         });
         if (!announcement) {
           throw new Error("이미 삭제된 공고입니다.");
-        }
-        if (announcement.userCode != userCode && userCode != 1) {
-          throw new Error("본인이 작성한 공고만 삭제 가능합니다.");
         }
         await client.announcementApplication.deleteMany({
           where: {
