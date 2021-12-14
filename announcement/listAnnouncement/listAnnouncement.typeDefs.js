@@ -42,6 +42,7 @@ export default gql`
     confirm: Boolean!
     createdAt: String!
     user: User
+    announcement: Announcement
   }
 
   type AnnouncementQueryResult {

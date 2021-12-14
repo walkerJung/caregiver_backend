@@ -1,6 +1,20 @@
 import client from "../../client";
 
 export default {
+  Announcement: {
+    announcementApplication: ({ announcementCode }) => {
+      return client.announcementApplication.findMany({
+        where: { announcementCode: announcementCode },
+      });
+    },
+  },
+  AnnouncementApplication: {
+    announcement: ({ announcementCode }) => {
+      return client.announcement.findUnique({
+        where: { code: announcementCode },
+      });
+    },
+  },
   Query: {
     listAnnouncement: async (_, { userCode, status, take, skip }) => {
       try {
