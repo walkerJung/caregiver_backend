@@ -21,7 +21,8 @@ export default {
               code: item.announcementCode,
             },
           });
-          announcements.push(announcement);
+          console.log(announcement);
+          await announcements.push(announcement);
         });
         console.log(announcements);
         return {
