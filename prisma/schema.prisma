@@ -21,7 +21,7 @@ model User {
   createdAt               DateTime                  @default(now())
   updatedAt               DateTime                  @updatedAt
   writeIP                 String
-  CaregiverInfo           CaregiverInfo?
+  CaregiverInfo           CaregiverInfo[]
   Announcement            Announcement[]
   AnnouncementApplication AnnouncementApplication[]
 }
