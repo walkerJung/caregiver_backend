@@ -21,7 +21,7 @@ model User {
   createdAt               DateTime                  @default(now())
   updatedAt               DateTime                  @updatedAt
   writeIP                 String
-  CaregiverInfo           CaregiverInfo[]
+  CaregiverInfo           CaregiverInfo?
   Announcement            Announcement[]
   AnnouncementApplication AnnouncementApplication[]
 }
@@ -88,8 +88,8 @@ model AnnouncementApplication {
   code             Int          @id @default(autoincrement())
   announcement     Announcement @relation(fields: [announcementCode], references: [code])
   announcementCode Int
-  user             User         @relation(fields: [userCode], references: [code])
-  userCode         Int
+  user             User?        @relation(fields: [userCode], references: [code])
+  userCode         Int?
   caregiverCost    Int
   confirm          Boolean
   createdAt        DateTime     @default(now())
