@@ -24,6 +24,11 @@ export default {
           announcements.push(announcement);
         });
         console.log(announcements);
+        return {
+          announcements,
+          count: announcements.length,
+          result: true,
+        };
       } catch (e) {
         return {
           result: false,
