@@ -11,18 +11,19 @@ generator client {
 }
 
 model User {
-  code          Int            @id @default(autoincrement())
-  userId        String         @unique
-  userType      String
-  userName      String
-  password      String
-  sex           String
-  phone         String         @unique
-  createdAt     DateTime       @default(now())
-  updatedAt     DateTime       @updatedAt
-  writeIP       String
-  CaregiverInfo CaregiverInfo?
-  Announcement  Announcement[]
+  code                    Int                       @id @default(autoincrement())
+  userId                  String                    @unique
+  userType                String
+  userName                String
+  password                String
+  sex                     String
+  phone                   String                    @unique
+  createdAt               DateTime                  @default(now())
+  updatedAt               DateTime                  @updatedAt
+  writeIP                 String
+  CaregiverInfo           CaregiverInfo?
+  Announcement            Announcement[]
+  AnnouncementApplication AnnouncementApplication[]
 }
 
 model CaregiverInfo {
@@ -87,6 +88,8 @@ model AnnouncementApplication {
   code             Int          @id @default(autoincrement())
   announcement     Announcement @relation(fields: [announcementCode], references: [code])
   announcementCode Int
+  user             User         @relation(fields: [userCode], references: [code])
+  userCode         Int
   caregiverCost    Int
   confirm          Boolean
   createdAt        DateTime     @default(now())
