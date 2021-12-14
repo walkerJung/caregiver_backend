@@ -14,7 +14,7 @@ export default gql`
       mealCare: String
       urineCare: String
       suctionCare: String
-      monveCare: String
+      moveCare: String
       bedCare: String
     ): MutationResponse!
   }
