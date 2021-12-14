@@ -22,7 +22,7 @@ export default {
             },
           });
           console.log(announcement);
-          await announcements.push(...announcement);
+          await announcements.push(announcement);
         });
         console.log(announcements);
         return {
