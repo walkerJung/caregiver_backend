@@ -89,7 +89,7 @@ model AnnouncementApplication {
   announcement     Announcement @relation(fields: [announcementCode], references: [code])
   announcementCode Int
   user             User         @relation(fields: [userCode], references: [code])
-  userCode         Int          @unique
+  userCode         Int
   caregiverCost    Int
   confirm          Boolean
   createdAt        DateTime     @default(now())
