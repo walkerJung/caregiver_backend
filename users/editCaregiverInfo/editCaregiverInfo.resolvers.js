@@ -27,13 +27,12 @@ export default {
       { loggedInUser }
     ) => {
       try {
-        console.log(idCard);
         const { createReadStream, filename, mimetype, encoding } = await idCard;
 
         // Invoking the `createReadStream` will return a Readable Stream.
         // See https://nodejs.org/api/stream.html#stream_readable_streams
         const stream = createReadStream();
-        console.log(stream);
+        console.log(filename);
 
         // This is purely for demonstration purposes and will overwrite the
         // local-file-output.txt in the current working directory on EACH upload.
