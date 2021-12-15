@@ -39,7 +39,7 @@ export default {
             userId: loggedInUser.userId,
             extension,
           });
-
+          console.log(fileName);
           await client.caregiverInfo.update({
             where: { userCode: loggedInUser.code },
             data: {
