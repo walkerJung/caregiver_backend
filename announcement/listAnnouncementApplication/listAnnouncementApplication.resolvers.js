@@ -7,6 +7,11 @@ export default {
         where: { code: announcementCode },
       });
     },
+    user: ({ userCode }) => {
+      return client.user.findUnique({
+        where: { code: userCode },
+      });
+    },
   },
   Query: {
     listAnnouncementApplication: async (
