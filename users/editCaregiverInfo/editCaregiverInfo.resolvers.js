@@ -32,7 +32,7 @@ export default {
         // Invoking the `createReadStream` will return a Readable Stream.
         // See https://nodejs.org/api/stream.html#stream_readable_streams
         const stream = createReadStream();
-        console.log(filename);
+        console.log(stream);
 
         // This is purely for demonstration purposes and will overwrite the
         // local-file-output.txt in the current working directory on EACH upload.
