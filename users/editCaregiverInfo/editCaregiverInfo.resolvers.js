@@ -2,6 +2,8 @@ import bcrypt from "bcrypt";
 import client from "../../client";
 
 export default {
+  Upload: GraphQLUpload,
+
   Mutation: {
     editCaregiverInfo: async (
       _,
@@ -23,6 +25,12 @@ export default {
       { loggedInUser }
     ) => {
       try {
+        const { createReadStream, filename, mimetype, encoding } = await idCard;
+        const stream = createReadStream();
+        const out = require("fs").createWriteStream("local-file-output.txt");
+        stream.pipe(out);
+        await finished(out);
+
         if (loggedInUser.code != userCode) {
           throw new Error("잘못된 접근입니다.");
         }
