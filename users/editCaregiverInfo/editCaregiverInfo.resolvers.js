@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import client from "../../client";
 import { GraphQLUpload, graphqlUploadExpress } from "graphql-upload";
-import { finished } from "stream-promise";
+import { fileUpload } from "../../common/fileUpload";
 
 export default {
   Upload: GraphQLUpload,
@@ -27,18 +27,26 @@ export default {
       { loggedInUser }
     ) => {
       try {
-        const { createReadStream, filename, mimetype, encoding } = await idCard;
+        if (idCard) {
+          const { createReadStream, filename, mimetype } = await idCard;
+          const extension = filename.split(".").pop();
+          const stream = createReadStream();
+          const uploadDir = `/home/ubuntu/caregiver_backend/files/idCard`;
 
-        // Invoking the `createReadStream` will return a Readable Stream.
-        // See https://nodejs.org/api/stream.html#stream_readable_streams
-        const stream = createReadStream();
-        console.log(stream);
+          const { fileName } = await fileUpload({
+            uploadDir,
+            stream,
+            userId: loggedInUser.userId,
+            extension,
+          });
 
-        // This is purely for demonstration purposes and will overwrite the
-        // local-file-output.txt in the current working directory on EACH upload.
-        const out = require("fs").createWriteStream("/files");
-        stream.pipe(out);
-        await finished(out);
+          await client.user.update({
+            where: { code: loggedInUser.code },
+            data: {
+              idCard: `${uploadDir}/${fileName}`,
+            },
+          });
+        }
 
         if (loggedInUser.code != userCode) {
           throw new Error("잘못된 접근입니다.");
