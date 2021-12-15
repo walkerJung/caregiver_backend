@@ -72,25 +72,25 @@ export default {
           throw new Error("잘못된 접근입니다.");
         }
 
-        await client.caregiverInfo.update({
-          where: {
-            userCode,
-          },
-          data: {
-            residentNumber,
-            idCard,
-            smoke,
-            drink,
-            mealCare,
-            urineCare,
-            suctionCare,
-            moveCare,
-            bedCare,
-            address,
-            addressDetail,
-            bankInfo,
-          },
-        });
+        // await client.caregiverInfo.update({
+        //   where: {
+        //     userCode,
+        //   },
+        //   data: {
+        //     residentNumber,
+        //     idCard,
+        //     smoke,
+        //     drink,
+        //     mealCare,
+        //     urineCare,
+        //     suctionCare,
+        //     moveCare,
+        //     bedCare,
+        //     address,
+        //     addressDetail,
+        //     bankInfo,
+        //   },
+        // });
         return {
           ok: true,
         };
