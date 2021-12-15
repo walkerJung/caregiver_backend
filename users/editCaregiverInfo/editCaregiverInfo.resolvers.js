@@ -39,11 +39,31 @@ export default {
             userId: loggedInUser.userId,
             extension,
           });
-          console.log(fileName);
+
           await client.caregiverInfo.update({
             where: { userCode: loggedInUser.code },
             data: {
               idCard: `${uploadDir}/${fileName}`,
+            },
+          });
+        }
+        if (bankInfo) {
+          const { createReadStream, filename, mimetype } = await bankInfo;
+          const extension = filename.split(".").pop();
+          const stream = createReadStream();
+          const uploadDir = `/home/ubuntu/caregiver_backend/files/bankInfo`;
+
+          const { fileName } = await fileUpload({
+            uploadDir,
+            stream,
+            userId: loggedInUser.userId,
+            extension,
+          });
+
+          await client.caregiverInfo.update({
+            where: { userCode: loggedInUser.code },
+            data: {
+              bankInfo: `${uploadDir}/${fileName}`,
             },
           });
         }
