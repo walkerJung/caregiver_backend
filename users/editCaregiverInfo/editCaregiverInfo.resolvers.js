@@ -31,7 +31,7 @@ export default {
           const { createReadStream, filename, mimetype } = await idCard;
           const extension = filename.split(".").pop();
           const stream = createReadStream();
-          const uploadDir = `./files/idCard`;
+          const uploadDir = `/home/ubuntu/caregiver_backend/files/idCard`;
 
           const { fileName } = await fileUpload({
             uploadDir,
@@ -43,7 +43,7 @@ export default {
           await client.caregiverInfo.update({
             where: { userCode: loggedInUser.code },
             data: {
-              idCard: `${uploadDir}/${fileName}`,
+              idCard: `/files/idCard/${fileName}`,
             },
           });
         }
@@ -51,7 +51,7 @@ export default {
           const { createReadStream, filename, mimetype } = await bankInfo;
           const extension = filename.split(".").pop();
           const stream = createReadStream();
-          const uploadDir = `./files/bankInfo`;
+          const uploadDir = `/home/ubuntu/caregiver_backend/files/bankInfo`;
 
           const { fileName } = await fileUpload({
             uploadDir,
@@ -63,7 +63,7 @@ export default {
           await client.caregiverInfo.update({
             where: { userCode: loggedInUser.code },
             data: {
-              bankInfo: `${uploadDir}/${fileName}`,
+              bankInfo: `/files/bankInfo/${fileName}`,
             },
           });
         }
