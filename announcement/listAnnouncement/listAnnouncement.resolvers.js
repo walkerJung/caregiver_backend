@@ -2,9 +2,9 @@ import client from "../../client";
 
 export default {
   Announcement: {
-    announcementApplication: ({ announcementCode }) => {
+    announcementApplication: ({ code }) => {
       return client.announcementApplication.findMany({
-        where: { announcementCode: announcementCode },
+        where: { announcementCode: code },
       });
     },
     user: ({ userCode }) => {
