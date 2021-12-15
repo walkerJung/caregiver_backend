@@ -38,7 +38,7 @@ export default {
         const out = require("fs").createWriteStream("local-file-output.txt");
         stream.pipe(out);
         await finished(out);
-
+        console.log(out);
         if (loggedInUser.code != userCode) {
           throw new Error("잘못된 접근입니다.");
         }
