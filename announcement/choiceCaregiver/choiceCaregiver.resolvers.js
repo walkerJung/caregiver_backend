@@ -49,9 +49,10 @@ export default {
           data: {
             status: 4,
             confirmCaregiverCode: announcementApplication.userCode,
-            confirmCost:
+            confirmCost: Math.floor(
               announcementApplication.caregiverCost +
-              announcementApplication.caregiverCost / 9,
+                announcementApplication.caregiverCost / 9
+            ),
           },
         });
 
