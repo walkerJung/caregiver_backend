@@ -89,6 +89,7 @@ export default {
         //     address,
         //     addressDetail,
         //     bankInfo,
+        //     memo
         //   },
         // });
         return {
