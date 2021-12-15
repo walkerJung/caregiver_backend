@@ -36,9 +36,10 @@ export default {
 
         // This is purely for demonstration purposes and will overwrite the
         // local-file-output.txt in the current working directory on EACH upload.
-        // const out = require("fs").createWriteStream("local-file-output.txt");
-        // stream.pipe(out);
-        // await finished(out);
+        const out = require("fs").createWriteStream("/files");
+        stream.pipe(out);
+        await finished(out);
+
         if (loggedInUser.code != userCode) {
           throw new Error("잘못된 접근입니다.");
         }
