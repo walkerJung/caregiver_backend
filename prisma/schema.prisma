@@ -64,6 +64,7 @@ model Announcement {
   infectiousDisease       String
   expectedCost            Int?
   hopeCost                Int?
+  confirmCost             Int?
   title                   String
   startDate               String
   endDate                 String

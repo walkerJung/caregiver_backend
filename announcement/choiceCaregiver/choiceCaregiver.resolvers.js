@@ -4,7 +4,7 @@ export default {
   Mutation: {
     choiceCaregiver: async (
       _,
-      { code, announcementCode },
+      { code, announcementCode, confirmCost },
       { loggedInUser }
     ) => {
       try {
@@ -49,6 +49,7 @@ export default {
           data: {
             status: 4,
             confirmCaregiverCode: announcementApplication.userCode,
+            confirmCost: announcementApplication.caregiverCost,
           },
         });
 
