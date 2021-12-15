@@ -30,7 +30,9 @@
     "graphql-tools": "^7.0.5",
     "graphql-upload": "^13.0.0",
     "jsonwebtoken": "^8.5.1",
-    "stream-promise": "^3.2.0"
+    "stream-promise": "^3.2.0",
+    "sharp": "^0.29.1",
+    "shortid": "^2.2.16"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
