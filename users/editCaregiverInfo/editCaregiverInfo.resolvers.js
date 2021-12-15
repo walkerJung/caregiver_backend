@@ -40,8 +40,8 @@ export default {
             extension,
           });
 
-          await client.user.update({
-            where: { code: loggedInUser.code },
+          await client.caregiverInfo.update({
+            where: { userCode: loggedInUser.code },
             data: {
               idCard: `${uploadDir}/${fileName}`,
             },
