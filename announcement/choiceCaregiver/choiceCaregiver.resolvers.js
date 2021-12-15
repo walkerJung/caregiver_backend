@@ -49,7 +49,9 @@ export default {
           data: {
             status: 4,
             confirmCaregiverCode: announcementApplication.userCode,
-            confirmCost: announcementApplication.caregiverCost,
+            confirmCost:
+              announcementApplication.caregiverCost +
+              announcementApplication.caregiverCost * 0.9,
           },
         });
 
