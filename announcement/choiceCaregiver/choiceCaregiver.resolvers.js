@@ -51,7 +51,7 @@ export default {
             confirmCaregiverCode: announcementApplication.userCode,
             confirmCost:
               announcementApplication.caregiverCost +
-              announcementApplication.caregiverCost * 0.1,
+              announcementApplication.caregiverCost / 9,
           },
         });
 
