@@ -30,7 +30,7 @@
     "graphql-tools": "^7.0.5",
     "graphql-upload": "^13.0.0",
     "jsonwebtoken": "^8.5.1",
-    "react-number-format": "^4.8.0"
+    "stream-promise": "^3.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",

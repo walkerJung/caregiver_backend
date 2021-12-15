@@ -1,11 +1,7 @@
 import bcrypt from "bcrypt";
 import client from "../../client";
-const { ApolloServer, gql } = require("apollo-server-express");
-const {
-  GraphQLUpload,
-  graphqlUploadExpress, // A Koa implementation is also exported.
-} = require("graphql-upload");
-const { finished } = require("stream/promises");
+import { GraphQLUpload, graphqlUploadExpress } from "graphql-upload";
+import { finished } from "stream-promise";
 
 export default {
   Upload: GraphQLUpload,
@@ -32,7 +28,13 @@ export default {
     ) => {
       try {
         const { createReadStream, filename, mimetype, encoding } = await idCard;
+
+        // Invoking the `createReadStream` will return a Readable Stream.
+        // See https://nodejs.org/api/stream.html#stream_readable_streams
         const stream = createReadStream();
+
+        // This is purely for demonstration purposes and will overwrite the
+        // local-file-output.txt in the current working directory on EACH upload.
         const out = require("fs").createWriteStream("local-file-output.txt");
         stream.pipe(out);
         await finished(out);
