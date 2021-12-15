@@ -7,6 +7,11 @@ export default {
         where: { announcementCode: announcementCode },
       });
     },
+    user: ({ userCode }) => {
+      return client.user.findUnique({
+        where: { code: userCode },
+      });
+    },
   },
   AnnouncementApplication: {
     announcement: ({ announcementCode }) => {
