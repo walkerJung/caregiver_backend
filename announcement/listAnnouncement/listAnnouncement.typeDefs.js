@@ -5,6 +5,7 @@ export default gql`
     code: Int!
     status: Int!
     confirmCaregiverCode: Int
+    confirmCost: Int
     userCode: Int!
     needMealCare: String!
     needUrineCare: String!
