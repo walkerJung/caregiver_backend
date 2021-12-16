@@ -88,7 +88,6 @@ export default {
               bedCare,
               address,
               addressDetail,
-              memo,
             },
           });
         }
