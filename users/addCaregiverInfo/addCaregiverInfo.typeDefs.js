@@ -16,6 +16,7 @@ export default gql`
       suctionCare: String!
       moveCare: String!
       bedCare: String!
+      introduce: String!
     ): MutationResponse!
   }
 `;

@@ -18,6 +18,7 @@ export default {
         address,
         addressDetail,
         bankInfo,
+        introduce,
       }
     ) => {
       try {
@@ -54,6 +55,7 @@ export default {
             address,
             addressDetail,
             bankInfo,
+            introduce,
             writeIP,
           },
         });

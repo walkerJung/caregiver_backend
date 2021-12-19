@@ -23,6 +23,7 @@ export default {
         address,
         addressDetail,
         bankInfo,
+        introduce,
       },
       { loggedInUser }
     ) => {
@@ -88,6 +89,7 @@ export default {
               bedCare,
               address,
               addressDetail,
+              introduce,
             },
           });
         }
