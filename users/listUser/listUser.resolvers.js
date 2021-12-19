@@ -12,7 +12,7 @@ export default {
             userType: type,
           },
           include: {
-            caregiverInfo: true,
+            CaregiverInfo: true,
           },
         });
         const count = await client.user.count({
@@ -26,7 +26,6 @@ export default {
           result: true,
         };
       } catch (e) {
-        console.log(e);
         return {
           result: false,
         };
