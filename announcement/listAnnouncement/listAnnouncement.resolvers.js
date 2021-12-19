@@ -45,7 +45,7 @@ export default {
                 include: {
                   user: {
                     include: {
-                      caregiverInfo: true,
+                      CaregiverInfo: true,
                     },
                   },
                 },
