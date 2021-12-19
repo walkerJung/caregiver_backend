@@ -22,9 +22,6 @@ export default {
     user: ({ userCode }) => {
       return client.user.findUnique({
         where: { code: userCode },
-        include: {
-          CaregiverInfo: true,
-        },
       });
     },
   },
@@ -42,6 +39,9 @@ export default {
               announcementApplication: {
                 include: {
                   user: true,
+                  include: {
+                    CaregiverInfo: true,
+                  },
                 },
               },
               user: true,
