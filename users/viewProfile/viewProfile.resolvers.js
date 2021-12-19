@@ -9,7 +9,7 @@ export default {
             code,
           },
           include: {
-            CaregiverInfo: true,
+            caregiverInfo: true,
           },
         });
         return user;

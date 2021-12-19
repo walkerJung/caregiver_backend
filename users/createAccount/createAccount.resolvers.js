@@ -73,7 +73,7 @@ export default {
               sex,
               phone,
               writeIP,
-              CaregiverInfo: {
+              caregiverInfo: {
                 create: [
                   {
                     residentNumber,

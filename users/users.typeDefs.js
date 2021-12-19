@@ -27,6 +27,6 @@ export default gql`
     sex: String!
     phone: String!
     createdAt: String!
-    CaregiverInfo: [CaregiverInfo]
+    caregiverInfo: [CaregiverInfo]
   }
 `;

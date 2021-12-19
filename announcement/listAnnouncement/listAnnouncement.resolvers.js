@@ -22,9 +22,11 @@ export default {
     user: ({ userCode }) => {
       return client.user.findUnique({
         where: { code: userCode },
-        include: {
-          CaregiverInfo: true,
-        },
+      });
+    },
+    caregiverInfo: ({ userCode }) => {
+      return client.caregiverInfo.findUnique({
+        where: { code: userCode },
       });
     },
   },
@@ -43,7 +45,7 @@ export default {
                 include: {
                   user: {
                     include: {
-                      CaregiverInfo: true,
+                      caregiverInfo: true,
                     },
                   },
                 },

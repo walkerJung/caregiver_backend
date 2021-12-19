@@ -44,6 +44,7 @@ export default gql`
     createdAt: String!
     user: User
     announcement: Announcement
+    caregiverInfo: CaregiverInfo
   }
 
   type AnnouncementQueryResult {
