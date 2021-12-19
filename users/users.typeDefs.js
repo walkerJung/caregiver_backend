@@ -16,6 +16,7 @@ export default gql`
     suctionCare: String!
     moveCare: String!
     bedCare: String!
+    introduce: String!
   }
 
   type User {
@@ -27,6 +28,6 @@ export default gql`
     sex: String!
     phone: String!
     createdAt: String!
-    caregiverInfo: [CaregiverInfo]
+    caregiverInfo: CaregiverInfo
   }
 `;
