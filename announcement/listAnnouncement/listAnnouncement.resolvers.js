@@ -38,9 +38,10 @@ export default {
             include: {
               announcementApplication: {
                 include: {
-                  user: true,
-                  include: {
-                    CaregiverInfo: true,
+                  user: {
+                    include: {
+                      CaregiverInfo: true,
+                    },
                   },
                 },
               },
