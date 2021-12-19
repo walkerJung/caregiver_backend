@@ -14,7 +14,6 @@ export default {
         sex,
         phone,
         residentNumber,
-        // idCard,
         smoke,
         drink,
         mealCare,
@@ -24,7 +23,7 @@ export default {
         bedCare,
         address,
         addressDetail,
-        // bankInfo,
+        introduce,
       }
     ) => {
       try {
@@ -65,32 +64,6 @@ export default {
             },
           });
         } else {
-          // let idCardUrl = null;
-          // if (idCard) {
-          //   console.log(idCard);
-          //   const { filename, createReadStream } = await idCard.file;
-          //   const newFilename = `${userId}-${Date.now()}-${filename}`;
-          //   const readStream = createReadStream();
-          //   const writeStream = createWriteStream(
-          //     process.cwd() + "/files/" + newFilename
-          //   );
-          //   readStream.pipe(writeStream);
-          //   idCardUrl = `http://localhost:4000/static/${newFilename}`;
-          // }
-
-          // let bankInfoUrl = null;
-          // if (bankInfo) {
-          //   console.log(bankInfo);
-          //   const { filename, createReadStream } = await bankInfo.file;
-          //   const newFilename = `${userId}-${Date.now()}-${filename}`;
-          //   const readStream = createReadStream();
-          //   const writeStream = createWriteStream(
-          //     process.cwd() + "/files/" + newFilename
-          //   );
-          //   readStream.pipe(writeStream);
-          //   bankInfoUrl = `http://localhost:4000/static/${newFilename}`;
-          // }
-
           await client.user.create({
             data: {
               userId,
@@ -115,6 +88,7 @@ export default {
                     address,
                     addressDetail,
                     bankInfo: "bankInfo",
+                    introduce,
                     writeIP,
                   },
                 ],
