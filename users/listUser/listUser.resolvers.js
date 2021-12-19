@@ -26,6 +26,7 @@ export default {
           result: true,
         };
       } catch (e) {
+        console.log(e);
         return {
           result: false,
         };
