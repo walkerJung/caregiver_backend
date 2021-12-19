@@ -9,6 +9,7 @@ export default gql`
     password: String!
     sex: String!
     phone: String!
+    caregiverInfo: CaregiverInfo
   }
 
   type UserQueryResult {
