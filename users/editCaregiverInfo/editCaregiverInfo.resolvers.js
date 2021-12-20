@@ -32,7 +32,7 @@ export default {
           const { createReadStream, filename, mimetype } = await idCard;
           const extension = filename.split(".").pop();
           const stream = createReadStream();
-          const uploadDir = `/home/ubuntu/caregiver_backend/files/idCard`;
+          const uploadDir = `./files/idCard`;
 
           const { fileName } = await fileUpload({
             uploadDir,
@@ -52,7 +52,7 @@ export default {
           const { createReadStream, filename, mimetype } = await bankInfo;
           const extension = filename.split(".").pop();
           const stream = createReadStream();
-          const uploadDir = `/home/ubuntu/caregiver_backend/files/bankInfo`;
+          const uploadDir = `./files/bankInfo`;
 
           const { fileName } = await fileUpload({
             uploadDir,
