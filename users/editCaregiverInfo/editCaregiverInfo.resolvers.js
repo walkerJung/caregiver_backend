@@ -32,6 +32,7 @@ export default {
           const { createReadStream, filename, mimetype } = await idCard;
           const extension = filename.split(".").pop();
           const stream = createReadStream();
+          console.log(stream);
           const uploadDir = `/home/ubuntu/caregiver_backend/files/idCard`;
 
           const { fileName } = await fileUpload({
