@@ -30,8 +30,6 @@ export default {
       try {
         if (idCard) {
           const { createReadStream, filename, mimetype } = await idCard;
-          console.log(idCard);
-          return true;
           const extension = filename.split(".").pop();
           const stream = createReadStream();
           const uploadDir = `/home/ubuntu/caregiver_backend/files/idCard`;
