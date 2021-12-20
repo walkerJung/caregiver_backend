@@ -38,7 +38,7 @@ export const fileUpload = async ({ uploadDir, stream, userId, extension }) => {
     mkdirp.sync(uploadDir);
 
     const shortId = shortid.generate();
-    const filePath = `${uploadDir}/${shortId}-${id}.${extension}`;
+    const filePath = `${uploadDir}/${shortId}-${userId}.${extension}`;
     const fileName = `${shortId}-${userId}.${extension}`;
 
     return new Promise((resolve, reject) =>
