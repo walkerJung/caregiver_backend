@@ -35,7 +35,6 @@ export const fileUpload = async ({ uploadDir, stream, userId, extension }) => {
   // }
 
   try {
-    console.log(uploadDir);
     mkdirp.sync(uploadDir);
 
     const shortId = shortid.generate();
@@ -49,7 +48,7 @@ export const fileUpload = async ({ uploadDir, stream, userId, extension }) => {
         .on("error", reject)
     );
   } catch (e) {
-    console.log(e + "123123123123");
+    console.log(e);
     return false;
   }
 };
