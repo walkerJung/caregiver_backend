@@ -49,7 +49,7 @@ export const fileUpload = async ({ uploadDir, stream, userId, extension }) => {
         .on("error", reject)
     );
   } catch (e) {
-    console.log(e);
+    console.log(e + "123123123123");
     return false;
   }
 };
