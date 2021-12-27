@@ -35,6 +35,7 @@ export const fileUpload = async ({ uploadDir, stream, userId, extension }) => {
   // }
 
   try {
+    console.log(uploadDir);
     mkdirp.sync(uploadDir);
 
     const shortId = shortid.generate();
