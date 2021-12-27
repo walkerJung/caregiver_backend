@@ -28,6 +28,7 @@ export default {
       { loggedInUser }
     ) => {
       try {
+        console.log("qerqwerqwerqwer");
         if (idCard) {
           const { createReadStream, filename, mimetype } = await idCard;
           const extension = filename.split(".").pop();
