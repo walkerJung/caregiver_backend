@@ -9,7 +9,7 @@ export default gql`
       userType: String!
       userName: String!
       password: String!
-      sex: String!
+      sex: String
       phone: String!
       address: String
       addressDetail: String
